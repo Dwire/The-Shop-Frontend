@@ -26,6 +26,7 @@ import React, { Component } from 'react';
 import { Link, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Login from './Login';
+import Register from './Register'
 import Profile from './Profile';
 import * as actions from './actions';
 
@@ -51,11 +52,15 @@ class App extends Component {
             )}
           </li>
           <li>
+            <Link to="/register">Go to Registration</Link>
+          </li>
+          <li>
             <Link to="/profile">Go to Profile</Link>
           </li>
         </ul>
         <Switch>
           <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
           <Route path="/profile" component={Profile} />
         </Switch>
       </div>

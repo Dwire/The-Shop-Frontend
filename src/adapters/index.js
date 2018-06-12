@@ -24,8 +24,18 @@ const login = data => {
   }).then(res => res.json());
 };
 
+const register = data => {
+  return fetch(`${API_ROOT}/sign_up`, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+}
+
 export const adapter = {
   auth: {
+    register,
     login,
     getCurrentUser
   }
