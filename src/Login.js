@@ -31,6 +31,7 @@ class Login extends React.Component {
     return (
       <div>
         {this.state.error ? <h1>Try Again</h1> : null}
+        <h1>Log In Form</h1>
         <div className="ui form">
           <form onSubmit={this.handleSubmit}>
             <div className="ui field">

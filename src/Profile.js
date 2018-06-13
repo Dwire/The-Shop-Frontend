@@ -1,6 +1,12 @@
 import React from 'react';
 import withAuth from './hocs/withAuth';
 
+// going to create and import these components
+// import userProfile from './userProfile'
+// import localUsers from './localUsers'
+// import messageBoard from './messageBoard'
+// import userMap from './userMap'
+
 const Profile = props => {
   return (
     <div>

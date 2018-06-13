@@ -19,7 +19,6 @@ export const registerUser = (name, email, password, history) => dispatch => {
 
 export const loginUser = (email, password, history) => dispatch => {
   dispatch({ type: 'ASYNC_START' });
-  // console.log("history:", history);
   adapter.auth.login({ email, password }).then(user => {
     localStorage.setItem('token', user.token);
     dispatch({ type: 'SET_CURRENT_USER', user });

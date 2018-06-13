@@ -32,6 +32,7 @@ class Register extends React.Component {
     return (
       <div>
         {this.state.error ? <h1>Try Again</h1> : null}
+        <h1>Registration Form</h1>
         <div className="ui form">
           <form onSubmit={this.handleSubmit}>
             <div className="ui field">

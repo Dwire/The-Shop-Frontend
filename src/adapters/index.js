@@ -17,7 +17,7 @@ const getCurrentUser = () => {
 };
 
 const login = data => {
-  return fetch(`${API_ROOT}/login/`, {
+  return fetch(`${API_ROOT}/login`, {
     method: 'POST',
     headers,
     body: JSON.stringify(data)
