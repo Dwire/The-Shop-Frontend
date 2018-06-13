@@ -12,7 +12,7 @@ export const registerUser = (name, email, password, history) => dispatch => {
 
   adapter.auth.register({name, email, password}).then(user => {
     localStorage.setItem('token', user.token);
-    dispatch({type: 'SET_CURRENT_USER', user});
+    dispatch({type: 'SET_CURRENT_USER', user });
     history.push('/profile')
   })
 }

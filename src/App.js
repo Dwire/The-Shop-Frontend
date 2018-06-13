@@ -1,48 +1,50 @@
 import React, { Component } from 'react';
 import { Switch, Route, NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Login from './Login';
-import Register from './Register'
-import Profile from './Profile';
+import Login from './components/Login';
+import Register from './components/Register'
+import Profile from './components/Profile';
 import * as actions from './actions';
 
 class App extends Component {
   render() {
     // console.log(this.props.loggedIn)
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">The Shop</h1>
-          <img src={'/logo.svg'} className="App-logo" alt="logo"/>
-          <aside className="sidebar">
-               {this.props.loggedIn ? (
-                 <ul>
-                   <NavLink activeClassName="active" to="/login">
-                     <a
-                     onClick={e => {
-                       e.preventDefault();
-                       this.props.logoutUser();
-                     }}
-                   >
-                     Sign Out
-                   </a>
-                 </NavLink>
-                 </ul>
-                ) : (
-                  <ul>
-                    <NavLink activeClassName="active" to="/login">Login</NavLink>
-                    <NavLink activeClassName="active" to="/register">Registration</NavLink>
-                    <NavLink activeClassName="active" to="/profile">Profile</NavLink>
-                  </ul>
-                )}
-          </aside>
-        </header>
+      <div>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">The Shop</h1>
+            <h5>A Community Built Around You</h5>
+            <aside className="sidebar">
+                 {this.props.loggedIn ? (
+                   <ul>
+                     <NavLink activeClassName="active" to="/login">
+                       <a
+                       onClick={e => {
+                         e.preventDefault();
+                         this.props.logoutUser();
+                       }}
+                     >
+                       Sign Out
+                     </a>
+                   </NavLink>
+                   </ul>
+                  ) : (
+                    <ul>
+                      <NavLink activeClassName="active" to="/login">Login</NavLink>
+                      <NavLink activeClassName="active" to="/register">Registration</NavLink>
+                      <NavLink activeClassName="active" to="/profile">Profile</NavLink>
+                    </ul>
+                  )}
+            </aside>
+          </header>
 
-        <Switch>
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <Route path="/profile" component={Profile} />
-        </Switch>
+          <Switch>
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route path="/profile" component={Profile} />
+          </Switch>
+        </div>
       </div>
     );
   }

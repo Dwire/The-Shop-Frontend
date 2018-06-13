@@ -4,32 +4,46 @@ import './index.css';
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import reduxThunk from 'redux-thunk';
 
+import store from './store'
 import App from './App';
 
-const initialState = { currentUser: {}, localUsers: [] };
+//-------Moved to store.js
+// import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+// import thunk from 'redux-thunk';
 
-const authReducer = (state = initialState, action) => {
-  console.log(action);
-  switch (action.type) {
-    case 'SET_CURRENT_USER':
-      const { id, name, email, guru, project } = action.user;
-      return { ...state, currentUser: { id, name, email, guru, project } };
-    case 'LOGOUT_USER':
-      return { ...state, currentUser: {} };
-    default:
-      return state;
-  }
-};
 
-const rootReducer = combineReducers({
-  auth: authReducer
-});
 
-const store = createStore(rootReducer, applyMiddleware(reduxThunk));
+// const initialState = { currentUser: {}, localUsers: [] };
+//
+// const authReducer = (state = initialState, action) => {
+//   console.log(action);
+//   switch (action.type) {
+//     case 'SET_CURRENT_USER':
+//       const { id, name, email, guru, project } = action.user;
+//       return { ...state, currentUser: { id, name, email, guru, project } };
+//     case 'LOGOUT_USER':
+//       return { ...state, currentUser: {} };
+//     default:
+//       return state;
+//   }
+// };
+
+// const rootReducer = combineReducers({
+//   auth: authReducer
+// });
+
+// const store = createStore(rootReducer, applyMiddleware(reduxThunk));
+
+// const store = createStore(
+//   rootReducer,
+//   initialState,
+//   compose(
+//     applyMiddleware(thunk),
+//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// ))
+
 
 const Root = ({ store }) => {
   return (
