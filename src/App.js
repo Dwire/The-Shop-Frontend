@@ -8,7 +8,6 @@ import * as actions from './actions';
 
 class App extends Component {
   render() {
-    // console.log(this.props.loggedIn)
     return (
       <div>
         <div className="App">
@@ -16,20 +15,14 @@ class App extends Component {
             <h1 className="App-title">The Shop</h1>
             <h5>A Community Built Around You</h5>
             <aside className="sidebar">
-                 {this.props.loggedIn ? (
-                   <ul>
-                     <NavLink activeClassName="active" to="/login">
-                       <a
-                       onClick={e => {
-                         e.preventDefault();
-                         this.props.logoutUser();
-                       }}
-                     >
-                       Sign Out
-                     </a>
-                   </NavLink>
-                   </ul>
-                  ) : (
+              {this.props.loggedIn ? (
+                <ul>
+                  <NavLink activeClassName="active" to="/login"  onClick={e => {
+                     e.preventDefault();
+                     this.props.logoutUser();
+                   }}>Sign Out</NavLink>
+                </ul>
+               ) : (
                     <ul>
                       <NavLink activeClassName="active" to="/login">Login</NavLink>
                       <NavLink activeClassName="active" to="/register">Registration</NavLink>
