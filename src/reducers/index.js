@@ -1,3 +1,6 @@
-export default function hobbitReducer(state = {user: []}, action) {
+import { combineReducers } from 'redux'
+import authReducer from './authReducer'
 
-}
+export default combineReducers({
+  auth: authReducer
+})

@@ -1,5 +1,5 @@
 import React from 'react';
-import withAuth from './hocs/withAuth';
+import withAuth from '../hocs/withAuth';
 
 // going to create and import these components
 // import userProfile from './userProfile'
@@ -10,7 +10,7 @@ import withAuth from './hocs/withAuth';
 const Profile = props => {
   return (
     <div>
-      <h1>Congrats You are Logged In</h1>
+      <h1>Time To Talk Shop</h1>
     </div>
   );
 };
