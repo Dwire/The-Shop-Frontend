@@ -1,11 +1,16 @@
 import React from 'react';
+import Profile from './Profile'
+import Users from './Users'
 
 export default class Dash extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
-    return (<div>MyComponent</div>);
+    return (
+      <div>
+        <h1>Dashboard</h1>
+        <Profile />
+        <Users />
+      </div>
+    );
   }
 }

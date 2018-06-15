@@ -23,7 +23,7 @@ class Profile extends React.Component {
   render() {
     return (
       <div>
-        <h1>Time To Talk Shop</h1>
+        <h1>Profile for {this.props.currentUser.name}</h1>
         <ul>
           {this.userAttributes()}
         </ul>
