@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Switch, Route, NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Login from './components/Login';
-import Register from './components/Register'
-import Profile from './components/Profile';
+import Login from './containers/Login';
+import Register from './containers/Register'
+import Profile from './containers/Profile';
 import * as actions from './actions';
 
 class App extends Component {

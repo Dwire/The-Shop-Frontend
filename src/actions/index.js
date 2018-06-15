@@ -8,7 +8,7 @@ export const fetchUser = () => dispatch => {
 };
 
 export const registerUser = (name, email, password, history) => dispatch => {
-  dispatch({type: 'ASYNC_START'});
+    dispatch({type: 'ASYNC_START'});
   adapter.auth.register({name, email, password}).then(user => {
     localStorage.setItem('token', user.token);
     // dispatch({type: 'SET_CURRENT_USER', payload: user });
