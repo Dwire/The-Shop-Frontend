@@ -16,6 +16,10 @@ const getCurrentUser = () => {
   return getWithToken(`${API_ROOT}/current_user`);
 };
 
+const getAllUsers = () => {
+  return getWithToken(`${API_ROOT}/users`)
+}
+
 const login = data => {
   return fetch(`${API_ROOT}/login`, {
     method: 'POST',
@@ -37,7 +41,8 @@ export const adapter = {
   auth: {
     register,
     login,
-    getCurrentUser
+    getCurrentUser,
+    getAllUsers
   }
 };
 

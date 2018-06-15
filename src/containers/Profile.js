@@ -1,3 +1,8 @@
+// NOTE:
+// Fine for now but this is a single object "currentUser". Maybe just use that object to fill information {"name:" currentUser.name}
+// rather then converting to array and iterating
+// I should iterate for allUsers
+
 import React from 'react';
 import withAuth from '../hocs/withAuth';
 import { connect } from 'react-redux'
@@ -11,7 +16,7 @@ class Profile extends React.Component {
 
     return userArr.map(attr => {
       keyId++
-      return <li key={keyId}>{attr[0]}: {attr[1]}</li>
+      return <li key={keyId}> {attr[0]}: {attr[1]} </li>
     })
   }
 

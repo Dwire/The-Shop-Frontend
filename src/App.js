@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import Login from './containers/Login';
 import Register from './containers/Register'
 import Profile from './containers/Profile';
+import Users from './containers/Users';
+import Messages from './containers/Messages'
+import Dash from './containers/Dash'
 import * as actions from './actions';
 
 class App extends Component {
@@ -21,12 +24,15 @@ class App extends Component {
                      e.preventDefault();
                      this.props.logoutUser();
                    }}>Sign Out</NavLink>
+                   <NavLink activeClassName="active" to="/profile">Profile</NavLink>
+                   <NavLink activeClassName="active" to="/users">Local Users</NavLink>
+                   <NavLink activeClassName="active" to="/messages">Message Board</NavLink>
+                   <NavLink activeClassName="active" to="/dashboard">Dashboard</NavLink>
                 </ul>
                ) : (
                     <ul>
                       <NavLink activeClassName="active" to="/login">Login</NavLink>
                       <NavLink activeClassName="active" to="/register">Registration</NavLink>
-                      <NavLink activeClassName="active" to="/profile">Profile</NavLink>
                     </ul>
                   )}
             </aside>
@@ -36,6 +42,9 @@ class App extends Component {
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/profile" component={Profile} />
+            <Route path="/users" component={Users} />
+            <Route path="/dashboard" component={Dash} />
+            <Route path="/messages" component={Messages} />
           </Switch>
         </div>
       </div>

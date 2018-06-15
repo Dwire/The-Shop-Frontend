@@ -7,6 +7,13 @@ export const fetchUser = () => dispatch => {
   });
 };
 
+export const fetchUsers = () => dispatch => {
+  dispatch({ type: 'ASYNC_START'});
+     adapter.auth.getAllUsers().then(users => {
+       dispatch({type: 'SET_CURRENT_USERS', payload: users})
+     })
+}
+
 export const registerUser = (name, email, password, history) => dispatch => {
     dispatch({type: 'ASYNC_START'});
   adapter.auth.register({name, email, password}).then(user => {
