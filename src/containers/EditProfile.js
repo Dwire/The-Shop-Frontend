@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 // import EditProfileForm from '../components/EditProfileFrom';
 
 class EditProfile extends React.Component {
-  state = {
-    name:
-    email:
-    guru:
-    project:
-  }
+  // state = {
+  //   name:,
+  //   email:,
+  //   guru:,
+  //   project:
+  // }
 
 
   render() {

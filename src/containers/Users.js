@@ -5,23 +5,11 @@ import withAuth from '../hocs/withAuth'
 import { connect } from 'react-redux'
 import User from '../components/User'
 
- class Users extends React.Component {
+class Users extends React.Component {
 
-   state = {
-     toggle: false
-   }
-
-   listUsers = () => {
-      return this.props.localUsers.map(user => <User user={user} toggleView={this.state.toggle} handleClick={this.handleClick}/>)
-   }
-
-   handleClick = () => {
-     let newState = !this.state.toggle
-     this.setState({
-       ...this.state, toggle: newState
-     })
-     console.log("click", this.state.toggle)
-   }
+  listUsers = () => {
+     return this.props.localUsers.map(user => <User user={user} />)
+  }
 
 
   render() {
@@ -30,7 +18,9 @@ import User from '../components/User'
         <div>
           <h2>Local Users</h2>
         </div>
+        <div className="ui grid container">
           {this.listUsers()}
+        </div>
       </div>
     );
   }
