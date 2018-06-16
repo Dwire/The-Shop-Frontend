@@ -1,6 +1,7 @@
 import React from 'react';
 import Profile from './Profile'
 import Users from './Users'
+import Messges from './Messages'
 
 export default class Dash extends React.Component {
 

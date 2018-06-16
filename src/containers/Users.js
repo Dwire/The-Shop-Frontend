@@ -7,8 +7,20 @@ import User from '../components/User'
 
  class Users extends React.Component {
 
+   state = {
+     toggle: false
+   }
+
    listUsers = () => {
-      return this.props.localUsers.map(user => <User user={user} />)
+      return this.props.localUsers.map(user => <User user={user} toggleView={this.state.toggle} handleClick={this.handleClick}/>)
+   }
+
+   handleClick = () => {
+     let newState = !this.state.toggle
+     this.setState({
+       ...this.state, toggle: newState
+     })
+     console.log("click", this.state.toggle)
    }
 
 
