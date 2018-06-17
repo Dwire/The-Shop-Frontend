@@ -12,6 +12,24 @@ const getWithToken = (url) => {
   }).then(res => res.json());
 };
 
+const updateWithToken = (url, user) => {
+  const token = localStorage.getItem('token');
+  return fetch(url, {
+    method: 'PATCH',
+    headers: {
+      Authorization: token,
+      'Content-Type': 'application/json',
+      Accepts: 'application/json'
+    },
+    body: JSON.stringify(user)
+  })
+  .then(res => res.json())
+}
+
+const updateUser = (user) => {
+  return updateWithToken(`${API_ROOT}/users/${user.id}`, user)
+}
+
 const getCurrentUser = () => {
   return getWithToken(`${API_ROOT}/current_user`);
 };
@@ -21,6 +39,7 @@ const getAllUsers = () => {
 }
 
 const login = data => {
+  console.log("login D", data);
   return fetch(`${API_ROOT}/login`, {
     method: 'POST',
     headers,
@@ -41,6 +60,7 @@ export const adapter = {
   auth: {
     register,
     login,
+    updateUser,
     getCurrentUser,
     getAllUsers
   }

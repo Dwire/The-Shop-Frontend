@@ -32,6 +32,13 @@ export const loginUser = (email, password, history) => dispatch => {
   });
 };
 
+export const updateUser = (id, name, guru, project, email, history) => dispatch => {
+  dispatch({type: 'ASYNC_START'});
+  adapter.auth.updateUser({id, name, guru, project, email}).then(user => {
+    history.push('/profile')
+  })
+}
+
 export const logoutUser = () => {
   localStorage.removeItem('token');
   return { type: 'LOGOUT_USER' };

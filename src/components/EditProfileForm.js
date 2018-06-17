@@ -2,12 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 import withAuth from '../hocs/withAuth';
+import * as actions from '../actions';
 
 
 class EditProfileForm extends React.Component {
 
   state = {
     fields: {
+      id: null,
       name: "",
       guru: "",
       project: "",
@@ -16,8 +18,8 @@ class EditProfileForm extends React.Component {
   }
 
   componentDidMount() {
-    let {name, guru, project, email} = this.props.currentUser
-    const setCurrentUser = { ...this.state.fields, name, guru, project, email};
+    let {id, name, guru, project, email} = this.props.currentUser
+    const setCurrentUser = { ...this.state.fields, id, name, guru, project, email};
     this.setState({fields: setCurrentUser})
   }
 
@@ -29,13 +31,13 @@ class EditProfileForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log('click');
+    const {fields: {id, name, guru, project, email} } = this.state;
+    this.props.updateUser(id, name, guru, project, email, this.props.history);
     //redirect to profile.
   }
 
 
   render(){
-    console.log("someprops:", this.props);
     const { fields } = this.state;
     return (
       <div className="ui middle aligned center aligned grid">
@@ -73,18 +75,18 @@ class EditProfileForm extends React.Component {
               </div>
               <div className="field">
                 <div className="ui left icon input">
-                  <i className="user icon"></i>
+                  <i className="star icon"></i>
                   <input
                     type="text"
                     name="guru"
-                    placeholder="What Areas Do You Dominate?"
+                    placeholder="What areas do you dominate?"
                     value={fields.guru}
                     onChange={this.handleChange} />
                 </div>
               </div>
               <div className="field">
                 <div className="ui left icon input">
-                  <i className="user icon"></i>
+                  <i className="pin icon"></i>
                   <input
                     type="text"
                     name="project"
@@ -114,7 +116,7 @@ function mapStateToProps(state) {
   }
 }
 
-export default withAuth(connect(mapStateToProps)(EditProfileForm));
+export default withAuth(connect(mapStateToProps, actions)(EditProfileForm));
 
 
 /* <label>

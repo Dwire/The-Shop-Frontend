@@ -20,8 +20,6 @@ class Login extends React.Component {
     this.setState({ fields: newFields });
   };
 
-
-
   handleSubmit = e => {
     e.preventDefault();
     const { fields: { email, password } } = this.state;

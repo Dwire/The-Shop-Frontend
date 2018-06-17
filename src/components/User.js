@@ -32,14 +32,5 @@ class User extends React.Component {
   }
 }
 
-// render(){
-//   // if(this.state.clicked === true) {
-//     return (
-//       <div className="ui eight wide column tiles" onClick={this.handleClick}>
-//         <p> {this.props.name} </p>
-//         <img src={this.props.url} alt="pig pic" />
-//         {this.state.clicked ? this.hiddenDetails() : null}
-//       </div>
-//     )
 
 export default User
