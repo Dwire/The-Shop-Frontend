@@ -41,9 +41,9 @@ class Register extends React.Component {
           </h2>
           <form className="ui large form" onSubmit={this.handleSubmit}>
             <div className="ui stacked segment">
-              <div class="field">
-                <div class="ui left icon input">
-                  <i class="user icon"></i>
+              <div className="field">
+                <div className="ui left icon input">
+                  <i className="user icon"></i>
                   <input
                     type="text"
                     name="name"

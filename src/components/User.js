@@ -20,7 +20,6 @@ class User extends React.Component {
   }
 
   render() {
-    console.log("userP:", this.props);
     return (
       <div className="ui eight wide column tiles">
         <h2>{this.props.user.name}</h2>

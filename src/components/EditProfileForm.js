@@ -17,18 +17,14 @@ class EditProfileForm extends React.Component {
 
   componentDidMount() {
     let {name, guru, project, email} = this.props.currentUser
-    this.setState({ ...this.state.fields,
-      name,
-      guru,
-      project,
-      email
-    })
+    const setCurrentUser = { ...this.state.fields, name, guru, project, email};
+    this.setState({fields: setCurrentUser})
   }
 
 
   handleChange = (e) => {
     const newFields = {...this.state.fields, [e.target.name]: e.target.value}
-    this.setState({ fields: newFields})
+    this.setState({fields: newFields})
   }
 
   handleSubmit = (e) => {
@@ -80,7 +76,7 @@ class EditProfileForm extends React.Component {
                   <i className="user icon"></i>
                   <input
                     type="text"
-                    name="Guru"
+                    name="guru"
                     placeholder="What Areas Do You Dominate?"
                     value={fields.guru}
                     onChange={this.handleChange} />
@@ -106,21 +102,6 @@ class EditProfileForm extends React.Component {
         </div>
       </div>
 
-      // <form onSubmit={this.handleSubmit}>
-      //   <label>Name</label>
-      //   <input type="text" name="name" value={this.state.name} onChange={this.handleChange}  />
-      //   <br/>
-      //   <label>Guru</label>
-      //   <input type="text" name="guru" value={this.state.guru} onChange={this.handleChange}  />
-      //   <br/>
-      //   <label>Project</label>
-      //   <input type="text" name="project" value={this.state.project} onChange={this.handleChange}  />
-      //   <br/>
-      //   <label>Email</label>
-      //   <input type="text" name="email" value={this.state.email} onChange={this.handleChange}  />
-      //   <br/>
-      //   <input type="submit" value="Submit" />
-      // </form>
     );
   }
 
@@ -136,7 +117,7 @@ function mapStateToProps(state) {
 export default withAuth(connect(mapStateToProps)(EditProfileForm));
 
 
-{/* <label>
+/* <label>
   Profile Pic:
   <input
     type="file"
@@ -145,4 +126,4 @@ export default withAuth(connect(mapStateToProps)(EditProfileForm));
     }}
   />
 </label>
-<br/> */}
+<br/> */
