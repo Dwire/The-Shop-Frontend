@@ -48,6 +48,7 @@ const login = data => {
 };
 
 const register = data => {
+  debugger
   return fetch(`${API_ROOT}/sign_up`, {
     method: 'POST',
     headers,

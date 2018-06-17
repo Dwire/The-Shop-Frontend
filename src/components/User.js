@@ -12,7 +12,6 @@ class User extends React.Component {
     this.setState({
       ...this.state, toggle: newState
     })
-    console.log("click", this.state.toggle)
   }
 
   hiddenDetails = () => {

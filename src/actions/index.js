@@ -14,9 +14,10 @@ export const fetchUsers = () => dispatch => {
      })
 }
 
-export const registerUser = (name, email, password, history) => dispatch => {
+export const registerUser = (name, email, password, longitude, latitude, history) => dispatch => {
+  debugger
     dispatch({type: 'ASYNC_START'});
-  adapter.auth.register({name, email, password}).then(user => {
+  adapter.auth.register({name, email, password, longitude, latitude}).then(user => {
     localStorage.setItem('token', user.token);
     // dispatch({type: 'SET_CURRENT_USER', payload: user });
     history.push('/profile')
