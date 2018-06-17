@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import { Switch, Route, NavLink, withRouter } from 'react-router-dom';
+import {NavLink, withRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
+
 import Login from './containers/Login';
 import Register from './containers/Register'
 import Profile from './containers/Profile';
 import Users from './containers/Users';
 import Messages from './containers/Messages'
 import Dash from './containers/Dash'
+import EditProfileForm from './components/EditProfileForm'
+// import Routes from './routes'
 import * as actions from './actions';
 
 class App extends Component {
@@ -45,6 +48,7 @@ class App extends Component {
             <Route path="/users" component={Users} />
             <Route path="/dashboard" component={Dash} />
             <Route path="/messages" component={Messages} />
+            <Route path="/edit_profile" component={EditProfileForm} />
           </Switch>
         </div>
       </div>

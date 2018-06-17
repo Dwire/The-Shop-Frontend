@@ -9,6 +9,20 @@ import { Provider } from 'react-redux';
 import store from './store'
 import App from './App';
 
+
+const Root = ({ store }) => {
+  return (
+    <Router>
+      <Provider store={store}>
+        <Route path="/" component={App} />
+      </Provider>
+    </Router>
+  );
+};
+
+ReactDOM.render(<Root store={store} />, document.getElementById('root'));
+
+
 //-------Moved to store.js
 // import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 // import thunk from 'redux-thunk';
@@ -44,18 +58,6 @@ import App from './App';
 //     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 // ))
 
-
-const Root = ({ store }) => {
-  return (
-    <Router>
-      <Provider store={store}>
-        <Route path="/" component={App} />
-      </Provider>
-    </Router>
-  );
-};
-
-ReactDOM.render(<Root store={store} />, document.getElementById('root'));
 
 
 // // w/create-react-app

@@ -11,7 +11,6 @@ class Users extends React.Component {
      return this.props.localUsers.map(user => <User user={user} />)
   }
 
-
   render() {
     return (
       <div>

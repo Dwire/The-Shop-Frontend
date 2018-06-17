@@ -1,5 +1,5 @@
 import React from 'react';
-import withAuth from '../hocs/withAuth';
+// import withAuth from '../hocs/withAuth';
 import { connect } from 'react-redux';
 // import EditProfileForm from '../components/EditProfileFrom';
 
@@ -17,7 +17,7 @@ class EditProfile extends React.Component {
       <div>
         <form>
           <label>NAME</label>
-          <input type="text" value={props.user.}>
+          <input type="text" value={props.user.} />
         </form>
       </div>
     );
@@ -31,4 +31,4 @@ function mapStateToProps(state) {
 }
 
 // export default withAuth(Profile);
-export default withAuth(connect(mapStateToProps)(EditProfile));
+export default connect(mapStateToProps)(EditProfile));

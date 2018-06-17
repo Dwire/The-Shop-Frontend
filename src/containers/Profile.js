@@ -4,14 +4,13 @@
 // I should iterate for allUsers
 
 import React from 'react';
-import withAuth from '../hocs/withAuth';
+import {NavLink, withRouter, Route} from 'react-router-dom';
 import { connect } from 'react-redux'
 
+import withAuth from '../hocs/withAuth';
+import EditProfileForm from '../components/EditProfileForm'
+
 class Profile extends React.Component {
-  
-  handleClick = (e) => {
-    console.log("click");
-  }
 
   render() {
     return (
@@ -21,7 +20,8 @@ class Profile extends React.Component {
         <h4>Email: {this.props.currentUser.email}</h4>
         <h4>Guru: {this.props.currentUser.guru}</h4>
         <h4>Project: {this.props.currentUser.project}</h4>
-        <button onClick={this.handleClick}>Edit Profile</button>
+        <button><NavLink activeClassName="active" to="/edit_profile">Edit Profile</NavLink></button>
+        <Route exact path="/edit_profile" component={EditProfileForm} />
       </div>
     );
   }
@@ -34,17 +34,4 @@ function mapStateToProps(state) {
 }
 
 // export default withAuth(Profile);
-export default withAuth(connect(mapStateToProps)(Profile));
-
-
-
-  // userAttributes = () => {
-  //   let keyId = 100;
-  //   let userObj = this.props.currentUser
-  //   let userArr = Object.entries(userObj)
-  //
-  //   return userArr.map(attr => {
-  //     keyId++
-  //     return <li key={keyId}> {attr[0]}: {attr[1]} </li>
-  //   })
-  // }
+export default withRouter(withAuth(connect(mapStateToProps)(Profile)));
