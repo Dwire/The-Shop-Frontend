@@ -48,6 +48,7 @@ class Register extends React.Component {
     e.preventDefault();
     const { fields: { name, email, password }, position: {lng, lat} } = this.state;
     this.props.registerUser(name, email, password, lng, lat, this.props.history);
+    console.log("register state:", this.state);
   };
 
   render() {

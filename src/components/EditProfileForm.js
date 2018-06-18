@@ -17,7 +17,7 @@ class EditProfileForm extends React.Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     let {id, name, guru, project, email} = this.props.currentUser
     const setCurrentUser = { ...this.state.fields, id, name, guru, project, email};
     this.setState({fields: setCurrentUser})
@@ -33,7 +33,6 @@ class EditProfileForm extends React.Component {
     e.preventDefault()
     const {fields: {id, name, guru, project, email} } = this.state;
     this.props.updateUser(id, name, guru, project, email, this.props.history);
-    //redirect to profile.
   }
 
 

@@ -47,6 +47,7 @@ class Login extends React.Component {
     e.preventDefault();
     const { fields: { email, password }, position: {lng, lat} } = this.state;
     this.props.loginUser(email, password, lng, lat, this.props.history);
+    console.log("login state:", this.state);
   };
 
 
