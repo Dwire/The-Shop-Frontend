@@ -18,7 +18,6 @@ class Register extends React.Component {
         lat: undefined,
       }
     };
-    this.updateUserPosition = this.updateUserPosition.bind(this);
   }
 
   success = (pos) => {
@@ -39,34 +38,6 @@ class Register extends React.Component {
     navigator.geolocation.getCurrentPosition(this.success, this.error, options);
   }
 
-
-
-  // getUserLocation = () => {
-  //   let pos = {}
-  //   if (navigator.geolocation) {
-  //   navigator.geolocation.getCurrentPosition(function(position) {
-  //   //the browser supports geolocation and permission was given
-  //     pos = {
-  //       lat: position.coords.latitude,
-  //       lng: position.coords.longitude
-  //     }
-  //     this.updateUserPosition(pos)
-  //   }, function() {
-  //   //the browser supports geolocation but they denied permission
-  //     console.log("Need Your location");
-  //   })
-  //   } else {
-  //   //the browser doesnt support geolocation
-  //     console.log("use a different browser");
-  //   }
-  // }
-
-
-  updateUserPosition = (pos) => {
-    debugger
-    const newPosition = {...this.state.position, lat: pos.lat, lng: pos.lng}
-    this.setState({position: newPosition})
-  }
 
   handleChange = e => {
     const newFields = { ...this.state.fields, [e.target.name]: e.target.value };

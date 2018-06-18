@@ -11,9 +11,32 @@ class Login extends React.Component {
       fields: {
         email: '',
         password: ''
+      },
+      position: {
+        lng: undefined,
+        lat: undefined,
       }
     };
   }
+
+  success = (pos) => {
+    let crd = pos.coords;
+    const newPosition = {...this.state.position,  lng: crd.longitude, lat: crd.latitude}
+    this.setState({position: newPosition})
+  }
+
+  error = (err) => {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }
+  componentDidMount() {
+   let options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+    navigator.geolocation.getCurrentPosition(this.success, this.error, options);
+  }
+
 
   handleChange = e => {
     const newFields = { ...this.state.fields, [e.target.name]: e.target.value };
@@ -22,9 +45,10 @@ class Login extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const { fields: { email, password } } = this.state;
-    this.props.loginUser(email, password, this.props.history);
+    const { fields: { email, password }, position: {lng, lat} } = this.state;
+    this.props.loginUser(email, password, lng, lat, this.props.history);
   };
+
 
   render() {
     const { fields } = this.state;

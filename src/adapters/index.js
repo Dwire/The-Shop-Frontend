@@ -39,7 +39,7 @@ const getAllUsers = () => {
 }
 
 const login = data => {
-  console.log("login D", data);
+  // updateUser(data)
   return fetch(`${API_ROOT}/login`, {
     method: 'POST',
     headers,
@@ -48,7 +48,6 @@ const login = data => {
 };
 
 const register = data => {
-  debugger
   return fetch(`${API_ROOT}/sign_up`, {
     method: 'POST',
     headers,

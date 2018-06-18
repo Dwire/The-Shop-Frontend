@@ -6,12 +6,10 @@ const initialState = {
 }
 
 const authReducer = (state = initialState, action) => {
-  // console.log("action", action);
-  // // debugger
   switch (action.type) {
     case 'SET_CURRENT_USER':
-      const { id, name, email, guru, project } = action.payload;
-      return { ...state, currentUser: { id, name, email, guru, project } };
+      const { id, name, email, guru, project, longitude, latitude } = action.payload;
+      return { ...state, currentUser: { id, name, email, guru, project, longitude, latitude} };
     case 'SET_CURRENT_USERS':
       return { ...state, localUsers: action.payload}
     case 'LOGOUT_USER':
