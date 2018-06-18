@@ -9,6 +9,7 @@ import Users from './containers/Users';
 import Messages from './containers/Messages'
 import Dash from './containers/Dash'
 import EditProfileForm from './components/EditProfileForm'
+import UserMap from './containers/UserMap'
 // import Routes from './routes'
 import * as actions from './actions';
 
@@ -31,6 +32,7 @@ class App extends Component {
                    <NavLink activeClassName="active" to="/users">Local Users</NavLink>
                    <NavLink activeClassName="active" to="/messages">Message Board</NavLink>
                    <NavLink activeClassName="active" to="/dashboard">Dashboard</NavLink>
+                   <NavLink activeClassName="active" to="/map">User Map</NavLink>
                 </ul>
                ) : (
                     <ul>
@@ -49,6 +51,7 @@ class App extends Component {
             <Route path="/dashboard" component={Dash} />
             <Route path="/messages" component={Messages} />
             <Route path="/edit_profile" component={EditProfileForm} />
+            <Route path="/map" component={UserMap} />
           </Switch>
         </div>
       </div>
