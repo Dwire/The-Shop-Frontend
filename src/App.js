@@ -6,10 +6,11 @@ import Login from './containers/Login';
 import Register from './containers/Register'
 import Profile from './containers/Profile';
 import Users from './containers/Users';
-import Messages from './containers/Messages'
+import Posts from './containers/Posts'
 import Dash from './containers/Dash'
 import EditProfileForm from './components/EditProfileForm'
 import UserMap from './containers/UserMap'
+import PostForm from './containers/PostForm'
 // import Routes from './routes'
 import * as actions from './actions';
 
@@ -21,7 +22,7 @@ class App extends Component {
         <div className="ui top fixed inverted menu">
           <NavLink className="item" activeClassName="active" to="/profile">Profile</NavLink>
           <NavLink className="item" activeClassName="active" to="/users">Local Users</NavLink>
-          <NavLink className="item" activeClassName="active" to="/messages">Message Board</NavLink>
+          <NavLink className="item" activeClassName="active" to="/posts">Message Board</NavLink>
           <NavLink className="item" activeClassName="active" to="/map">User Map</NavLink>
           <NavLink className="item" activeClassName="active" to="/dashboard">Dashboard</NavLink>
           <div className="right menu">
@@ -51,8 +52,9 @@ class App extends Component {
             <Route path="/profile" component={Profile} />
             <Route path="/users" component={Users} />
             <Route path="/dashboard" component={Dash} />
-            <Route path="/messages" component={Messages} />
+            <Route path="/posts" component={Posts} />
             <Route path="/edit_profile" component={EditProfileForm} />
+            <Route path="/post_form" component={PostForm} />
             <Route path="/map" component={UserMap} />
           </Switch>
         </div>

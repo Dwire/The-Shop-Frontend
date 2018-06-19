@@ -5,14 +5,14 @@ import React from 'react';
 const UserDetail = (props) => {
     return (
         <div>
-          <div class="item">
-            <div class="content">
-              <i class="mail icon"></i><a href="mailto:jack@semantic-ui.com">Email: {props.user.email}</a>
+          <div className="item">
+            <div className="content">
+              <i className="mail icon"></i><a href="mailto:jack@semantic-ui.com">Email: {props.user.email}</a>
             </div>
           </div>
-          <div class="item">
-            <div class="content">
-              <i class="linkify icon"></i><a href="http://www.semantic-ui.com">semantic-ui.com</a>
+          <div className="item">
+            <div className="content">
+              <i className="blue linkedin icon"></i><a href="http://www.semantic-ui.com">semantic-ui.com</a>
             </div>
           </div>
         </div>

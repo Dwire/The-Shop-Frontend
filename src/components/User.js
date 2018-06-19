@@ -20,24 +20,24 @@ class User extends React.Component {
 
   render() {
     return (
-      <div class="item user-list">
-        {/* <img class="ui avatar image" src="/images/avatar2/small/rachel.png" /> */}
-        <div class="content">
-          <i class="big user circle icon"></i><a class="header">{this.props.user.name}</a>
-          <div class="description">Last seen watching <a><b>Arrested Development</b></a> just now.</div>
+      <div className="item user-list">
+        {/* <img className="ui avatar image" src="/images/avatar2/small/rachel.png" /> */}
+        <div className="content">
+          <i className="big user circle icon"></i><a className="header">{this.props.user.name}</a>
+          <div className="description">Last seen watching <a><b>Arrested Development</b></a> just now.</div>
         </div>
-        <div class="item">
-         <div class="content">
-           <i class="users icon"></i> Guru: {this.props.user.guru}
+        <div className="item">
+         <div className="content">
+           <i className="star icon"></i> Guru: {this.props.user.guru}
          </div>
        </div>
-       <div class="item">
-         <div class="content">
-           <i class="marker icon"></i> Current Project: {this.props.user.project}
+       <div className="item">
+         <div className="content">
+           <i className="pin icon"></i> Current Project: {this.props.user.project}
          </div>
        </div>
        {this.state.toggle ? this.hiddenDetails() : null}
-       <button onClick={this.handleClick}>{this.state.toggle ? "Show Less" : "Show More"}</button>
+       <button onClick={this.handleClick}>{this.state.toggle ? <i className="minus icon"></i> : <i className="plus icon"></i>}</button>
       </div>
       );
   }

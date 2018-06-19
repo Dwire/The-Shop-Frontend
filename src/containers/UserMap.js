@@ -43,6 +43,30 @@ export class MapContainer extends React.Component {
     }
   };
 
+  // createCircle = () => {
+  //     return  this.props.google.maps.Circle({
+  //                 strokeColor: '#FF0000',
+  //                 strokeOpacity: 0.8,
+  //                 strokeWeight: 2,
+  //                 fillColor: '#FF0000',
+  //                 fillOpacity: 0.35,
+  //                 // map: map,
+  //                 center: {lat: -74.0344977, lng: 40.740813},
+  //                 radius: Math.sqrt(100000) * 100
+  //               });
+  // }
+
+  // findDistance = () => {
+  //   return this.props.DistanceMatrixService(origins, destination, travelMode, (res, status) => {
+  //     console.log(distance)
+  //     if (status === "OK") {
+  //
+  //     }else{
+  //       console.log(err, 'status:', status)
+  //     }
+  //   })
+  // }
+  //
   render() {
     const longitude = this.props.currentUser.longitude
     const latitude = this.props.currentUser.latitude
@@ -52,6 +76,8 @@ export class MapContainer extends React.Component {
       width: '94%',
       height: '60%'
     }
+
+
 
     console.log("map", this.props.google)
     return (
@@ -74,6 +100,9 @@ export class MapContainer extends React.Component {
               />
 
         {this.localUserMarker()}
+        {/* {this.createCircle()} */}
+        {/* {this.findDistance({lat: -74.0344977, lng: 40.740813}, {lat: -75.0344977, lng: 40.740813})} */}
+
 
         <InfoWindow
           marker={this.state.activeMarker}
@@ -102,19 +131,5 @@ export default  connect(mapStateToProps, actions)(GoogleApiWrapper({apiKey: "AIz
 
 
 
-{/* <Circle
-  clickable
-  draggable
-  editable
-  center={{lat: latitude, lng: longitude}}
-  radius={10000000}
-  // ref={circle => { this.circle = circle; }}
-  // onCenterChanged={this.onCenterChanged}
-  // onRadiusChanged={this.onRadiusChanged}
- options={{
-   fillColor: '#f00',
-   strokeColor: '#f00',
- }}
-/> */}
 
 // google maps api key AIzaSyD-R-LpUSv7NomAd2ev-MF49YTl7ZSCNzk

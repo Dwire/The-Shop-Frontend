@@ -48,5 +48,12 @@ export const logoutUser = () => {
   return { type: 'LOGOUT_USER' };
 };
 
+export const createPost = (topic, title, body, user_id, history) => dispatch => {
+  dispatch({type: 'ASYNC_START'})
+  adapter.auth.createPost({topic, title, body, user_id}).then(user => {
+    history.push('/profile')
+  })
+}
+
 
 // NOTE: drope some notes for future you

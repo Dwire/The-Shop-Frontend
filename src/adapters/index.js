@@ -26,6 +26,20 @@ const updateWithToken = (url, user) => {
   .then(res => res.json())
 }
 
+const postWithToken = (url, post) => {
+  const token = localStorage.getItem('token');
+  return fetch(url, {
+    method: 'POST',
+    headers: {
+      Authorization: token,
+      'Content-Type': 'application/json',
+      Accepts: 'application/json'
+    },
+    body: JSON.stringify(post)
+  })
+  .then(res => res.json())
+}
+
 const updateUser = (user) => {
   return updateWithToken(`${API_ROOT}/users/${user.id}`, user)
 }
@@ -37,6 +51,11 @@ const getCurrentUser = () => {
 const getAllUsers = () => {
   return getWithToken(`${API_ROOT}/users`)
 }
+
+const createPost = post => {
+  return postWithToken(`${API_ROOT}/posts`, post)
+}
+
 
 const login = data => {
   // updateUser(data)
@@ -62,7 +81,8 @@ export const adapter = {
     login,
     updateUser,
     getCurrentUser,
-    getAllUsers
+    getAllUsers,
+    createPost
   }
 };
 

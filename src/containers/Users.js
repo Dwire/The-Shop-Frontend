@@ -13,7 +13,8 @@ class Users extends React.Component {
 
   render() {
     return (
-      <div class="ui list user-list">
+      <div className="ui list user-list">
+        <h1>Local Users</h1>
         {this.listUsers()}
       </div>
     );
