@@ -37,11 +37,12 @@ export const loginUser = (email, password, longitude, latitude, history) => disp
 };
 
 export const updateUser = (id, name, guru, project, email, history) => dispatch => {
+  console.log("HISTORY:", history);
   dispatch({type: 'ASYNC_START'});
   adapter.auth.updateUser({id, name, guru, project, email}).then(user => {
     history.push('/profile')
   })
-}
+}s
 
 export const logoutUser = () => {
   localStorage.removeItem('token');

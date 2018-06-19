@@ -3,6 +3,7 @@ import Profile from './Profile'
 import Users from './Users'
 import Posts from './Posts'
 import UserMap from './UserMap'
+import DashProfileEdit from './Dash/DashProfileEdit'
 
 export default class Dash extends React.Component {
 
@@ -10,7 +11,8 @@ export default class Dash extends React.Component {
     return (
       <div className="ui two column grid">
         <div className="two column row">
-          <div className="left floated column profile"><Profile /></div>
+          <div className="column profile"><Profile /></div>
+          <div className="column profile-edit"><DashProfileEdit /></div>
         </div>
         <div className="column users"><Users /></div>
         <div className="column posts"><Posts /></div>

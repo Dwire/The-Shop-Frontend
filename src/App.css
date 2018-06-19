@@ -17,6 +17,8 @@
 
 .posts {
   border: 1px solid black;
+  overflow: scroll;
+  max-height: 600px;
 }
 
 .users {
@@ -29,7 +31,13 @@
   border: 1px solid black;
 }
 
+.ui.segment, .ui.segments .segment {
+  border: 1px solid black;
+  overflow: scroll;
+  min-height: 500px;
+}
 
+/* TESTINg With boarders */
 
 
 

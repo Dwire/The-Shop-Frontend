@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-
+import {withRouter} from 'react-router-dom'
 import withAuth from '../hocs/withAuth';
 import * as actions from '../actions';
 
@@ -33,6 +33,7 @@ class EditProfileForm extends React.Component {
     e.preventDefault()
     const {fields: {id, name, guru, project, email} } = this.state;
     this.props.updateUser(id, name, guru, project, email, this.props.history);
+    this.props.handleHide()
   }
 
 
@@ -115,7 +116,7 @@ function mapStateToProps(state) {
   }
 }
 
-export default withAuth(connect(mapStateToProps, actions)(EditProfileForm));
+export default withRouter(withAuth(connect(mapStateToProps, actions)(EditProfileForm)));
 
 
 /* <label>

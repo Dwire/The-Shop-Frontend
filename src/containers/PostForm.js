@@ -37,7 +37,6 @@ class PostForm extends React.Component {
 
 
   render(){
-    console.log(this.state);
     const { fields } = this.state;
     return (
       <div className="ui middle aligned center aligned grid">

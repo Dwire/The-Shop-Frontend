@@ -21,15 +21,15 @@ class UserPosts extends React.Component {
   displayPosts = () => {
     if (this.props.userPosts.length > 0) {
       return this.props.userPosts.map(post => {
-        return <div class="card">
-                <div class="content">
-                  <div class="header">
+        return <div className="card">
+                <div className="content">
+                  <div className="header">
                     {post.title}
                   </div>
-                  <div class="meta">
+                  <div className="meta">
                     {post.topic}
                   </div>
-                  <div class="description">
+                  <div className="description">
                     {post.body}
                   </div>
                 </div>

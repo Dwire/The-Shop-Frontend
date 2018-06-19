@@ -14,7 +14,6 @@ class Posts extends React.Component {
   }
 
   render() {
-    console.log("LOCAL:", this.props.localUsers);
     return (
       <div className="ui list user-list">
         <h1>Local User Posts</h1>
