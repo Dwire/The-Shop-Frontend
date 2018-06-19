@@ -42,7 +42,7 @@ export const updateUser = (id, name, guru, project, email, history) => dispatch 
   adapter.auth.updateUser({id, name, guru, project, email}).then(user => {
     history.push('/profile')
   })
-}s
+}
 
 export const logoutUser = () => {
   localStorage.removeItem('token');
