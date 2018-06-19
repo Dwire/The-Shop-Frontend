@@ -31,8 +31,12 @@
   border: 1px solid black;
 }
 
-.ui.segment, .ui.segments .segment {
-  border: 1px solid black;
+.profile-sec {
+  overflow: scroll;
+  min-height: 500px;
+}
+
+.dimable-div {
   overflow: scroll;
   min-height: 500px;
 }

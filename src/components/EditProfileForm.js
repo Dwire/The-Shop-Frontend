@@ -49,7 +49,7 @@ class EditProfileForm extends React.Component {
                   Edit your account
             </div>
           </h2>
-          <form className="ui large form" onSubmit={this.handleSubmit}>
+          <form className="ui large form">
             <div className="ui stacked segment">
               <div className="field">
                 <div className="ui left icon input">
@@ -95,12 +95,13 @@ class EditProfileForm extends React.Component {
                     onChange={this.handleChange} />
                 </div>
               </div>
-              <button className="ui fluid large teal submit button">Submit</button>
+
             </div>
 
             <div className="ui error message"></div>
 
           </form>
+          <button onClick={this.handleSubmit} className="ui fluid large teal submit button">Submit</button>
         </div>
       </div>
 

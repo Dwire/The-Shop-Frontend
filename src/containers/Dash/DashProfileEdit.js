@@ -19,11 +19,13 @@ class DashProfileEdit extends React.Component {
   render() {
     const { active } = this.state
     return (
-      <div className="dimable">
-         <Dimmer.Dimmable as={Segment} dimmed={active}>
+      <div >
+         <Dimmer.Dimmable className="dimable-div" as={Segment} dimmed={active}>
            <p>
              <Image src='/assets/images/wireframe/short-paragraph.png' />
            </p>
+           <h1>Edit Your Profile</h1>
+           <h3>Let people know what you are up to</h3>
            <Button icon='plus' onClick={this.handleShow} />
 
            <Dimmer active={active} onClickOutside={this.handleHide} verticalAlign='top'>
@@ -33,12 +35,6 @@ class DashProfileEdit extends React.Component {
               <EditProfileForm handleHide={this.handleHide}/>
            </Dimmer>
          </Dimmer.Dimmable>
-
-
-         <Button.Group>
-           <Button icon='plus' onClick={this.handleShow} />
-           <Button icon='minus' onClick={this.handleHide} />
-         </Button.Group>
        </div>
     );
   }

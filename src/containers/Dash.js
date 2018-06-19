@@ -10,7 +10,7 @@ export default class Dash extends React.Component {
   render() {
     return (
       <div className="ui two column grid">
-        <div className="two column row">
+        <div className="two column row profile-sec">
           <div className="column profile"><Profile /></div>
           <div className="column profile-edit"><DashProfileEdit /></div>
         </div>
