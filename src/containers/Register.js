@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import * as actions from '../actions';
 
+
+// FIXME: Add semantic validations on all forms
 class Register extends React.Component {
   constructor() {
     super();
@@ -20,6 +22,7 @@ class Register extends React.Component {
     };
   }
 
+// NOTE: handles update of location {lng lat} on registration....Same code in login component (DRY)
   success = (pos) => {
     let crd = pos.coords;
     const newPosition = {...this.state.position,  lng: crd.longitude, lat: crd.latitude}
@@ -48,7 +51,6 @@ class Register extends React.Component {
     e.preventDefault();
     const { fields: { name, email, password }, position: {lng, lat} } = this.state;
     this.props.registerUser(name, email, password, lng, lat, this.props.history);
-    console.log("register state:", this.state);
   };
 
   render() {

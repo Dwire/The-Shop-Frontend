@@ -20,12 +20,24 @@ class User extends React.Component {
 
   render() {
     return (
-      <div className="ui eight wide column tiles">
-        <h2>{this.props.user.name}</h2>
-        <h5>Guru: {this.props.user.guru}</h5>
-        <h5>Current Project: {this.props.user.project}</h5>
-        {this.state.toggle ? this.hiddenDetails() : null}
-        <button onClick={this.handleClick}>{this.state.toggle ? "Show Less" : "Show More"}</button>
+      <div class="item user-list">
+        {/* <img class="ui avatar image" src="/images/avatar2/small/rachel.png" /> */}
+        <div class="content">
+          <i class="big user circle icon"></i><a class="header">{this.props.user.name}</a>
+          <div class="description">Last seen watching <a><b>Arrested Development</b></a> just now.</div>
+        </div>
+        <div class="item">
+         <div class="content">
+           <i class="users icon"></i> Guru: {this.props.user.guru}
+         </div>
+       </div>
+       <div class="item">
+         <div class="content">
+           <i class="marker icon"></i> Current Project: {this.props.user.project}
+         </div>
+       </div>
+       {this.state.toggle ? this.hiddenDetails() : null}
+       <button onClick={this.handleClick}>{this.state.toggle ? "Show Less" : "Show More"}</button>
       </div>
       );
   }

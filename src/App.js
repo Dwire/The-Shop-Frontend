@@ -17,30 +17,32 @@ class App extends Component {
   render() {
     return (
       <div>
+        {this.props.loggedIn ? (
+        <div className="ui top fixed inverted menu">
+          <NavLink className="item" activeClassName="active" to="/profile">Profile</NavLink>
+          <NavLink className="item" activeClassName="active" to="/users">Local Users</NavLink>
+          <NavLink className="item" activeClassName="active" to="/messages">Message Board</NavLink>
+          <NavLink className="item" activeClassName="active" to="/map">User Map</NavLink>
+          <NavLink className="item" activeClassName="active" to="/dashboard">Dashboard</NavLink>
+          <div className="right menu">
+            <NavLink className="item" activeClassName="active" to="/login"  onClick={e => {
+               e.preventDefault();
+               this.props.logoutUser();
+            }}>Sign Out</NavLink>
+          </div>
+        </div>
+          ) : (
+      <div className="ui inverted menu navbar">
+          <div className="right menu">
+            <NavLink className="item" activeClassName="active" to="/login">Login</NavLink>
+            <NavLink className="item" activeClassName="active" to="/register">Register</NavLink>
+          </div>
+      </div>
+      )}
         <div className="App">
           <header className="App-header">
             <h1 className="App-title">The Shop</h1>
             <h5>A Community Built Around You</h5>
-            <aside className="sidebar">
-              {this.props.loggedIn ? (
-                <ul>
-                  <NavLink activeClassName="active" to="/login"  onClick={e => {
-                     e.preventDefault();
-                     this.props.logoutUser();
-                   }}>Sign Out</NavLink>
-                   <NavLink activeClassName="active" to="/profile">Profile</NavLink>
-                   <NavLink activeClassName="active" to="/users">Local Users</NavLink>
-                   <NavLink activeClassName="active" to="/messages">Message Board</NavLink>
-                   <NavLink activeClassName="active" to="/dashboard">Dashboard</NavLink>
-                   <NavLink activeClassName="active" to="/map">User Map</NavLink>
-                </ul>
-               ) : (
-                    <ul>
-                      <NavLink activeClassName="active" to="/login">Login</NavLink>
-                      <NavLink activeClassName="active" to="/register">Registration</NavLink>
-                    </ul>
-                  )}
-            </aside>
           </header>
 
           <Switch>

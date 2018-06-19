@@ -1,40 +1,120 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
+import * as actions from '../actions';
+
 export class MapContainer extends React.Component {
-  render() {
-    console.log("map props:", this.props);
-    const style = {
-      width: '100%',
-      height: '100%'
+  state = {
+   showingInfoWindow: false,
+   activeMarker: {},
+   selectedPlace: {},
+  };
+
+  localUserMarker = () => {
+    console.log(this.props.localUsers);
+      return this.props.localUsers.map(user => {
+        return <Marker
+              onClick={this.onMarkerClick}
+              key={user.id}
+              title={'Your Next Best Friend'}
+              label={user.name}
+              name={user.name}
+              position={{lat: user.latitude, lng: user.longitude}}
+            />
+          })
+  }
+
+
+  onMarkerClick = (props, marker, e) => {
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    })
+  };
+
+  onMapClicked = (props) => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      })
     }
+  };
+
+  render() {
+    const longitude = this.props.currentUser.longitude
+    const latitude = this.props.currentUser.latitude
+
+    const style = {
+      // margin: '60px',
+      width: '94%',
+      height: '60%'
+    }
+
+    console.log("map", this.props.google)
     return (
       <Map
-      google={this.props.google}
-      style={style}
-      center={{
-        lat: 40.854885,
-        lng: -88.081807
-      }}
-      zoom={15}
-    >
+        onClick={this.onMapClicked}
+        google={this.props.google}
+        style={style}
+        className="map"
+        initialCenter={{
+          lat: latitude,
+          lng: longitude
+        }}
+        zoom={16}
+      >
 
         <Marker onClick={this.onMarkerClick}
-                name={'Current location'} />
+                title={'This is Your Current Location'}
+                label={'YOU'}
+                name={this.props.currentUser.name}
+              />
 
-        <InfoWindow onClose={this.onInfoWindowClose}>
+        {this.localUserMarker()}
+
+        <InfoWindow
+          marker={this.state.activeMarker}
+          visible={this.state.showingInfoWindow}>
             <div>
-              <h1>Window</h1>
+              <h1>{this.state.selectedPlace.name}</h1>
+              <h3>{this.state.selectedPlace.title}</h3>
             </div>
         </InfoWindow>
+
+
       </Map>
     );
   }
 }
 
-export default GoogleApiWrapper({
-  apiKey: "AIzaSyD-R-LpUSv7NomAd2ev-MF49YTl7ZSCNzk"
-})(MapContainer)
+function mapStateToProps(state) {
+  return {
+    currentUser: state.auth.currentUser,
+    localUsers: state.auth.localUsers
+  }
+}
 
+
+export default  connect(mapStateToProps, actions)(GoogleApiWrapper({apiKey: "AIzaSyD-R-LpUSv7NomAd2ev-MF49YTl7ZSCNzk"})(MapContainer))
+
+
+
+{/* <Circle
+  clickable
+  draggable
+  editable
+  center={{lat: latitude, lng: longitude}}
+  radius={10000000}
+  // ref={circle => { this.circle = circle; }}
+  // onCenterChanged={this.onCenterChanged}
+  // onRadiusChanged={this.onRadiusChanged}
+ options={{
+   fillColor: '#f00',
+   strokeColor: '#f00',
+ }}
+/> */}
 
 // google maps api key AIzaSyD-R-LpUSv7NomAd2ev-MF49YTl7ZSCNzk

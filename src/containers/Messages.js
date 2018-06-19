@@ -6,6 +6,13 @@ export default class Messages extends React.Component {
   }
 
   render() {
-    return (<div>MyComponent</div>);
+    return (
+      <div>
+        <h1>User Messges</h1>
+        <p>dslfjalsdkf</p>
+        <p>dslfjalsdkf</p>
+        <p>dslfjalsdkf</p>
+      </div>
+    );
   }
 }

@@ -19,6 +19,7 @@ class Login extends React.Component {
     };
   }
 
+// NOTE: handles update of location {lng lat} on registration....Same code in login component (DRY)
   success = (pos) => {
     let crd = pos.coords;
     const newPosition = {...this.state.position,  lng: crd.longitude, lat: crd.latitude}
@@ -47,7 +48,6 @@ class Login extends React.Component {
     e.preventDefault();
     const { fields: { email, password }, position: {lng, lat} } = this.state;
     this.props.loginUser(email, password, lng, lat, this.props.history);
-    console.log("login state:", this.state);
   };
 
 
@@ -105,34 +105,3 @@ class Login extends React.Component {
 }
 
 export default withRouter(connect(null, actions)(Login));
-//
-// <div>
-//   {this.state.error ? <h1>Try Again</h1> : null}
-//   <h1>Log In Form</h1>
-//   <div className="ui form">
-//     <form onSubmit={this.handleSubmit}>
-//       <div className="ui field">
-//         <label>Email</label>
-//         <input
-//           name="email"
-//           placeholder="email"
-//           value={fields.email}
-//           onChange={this.handleChange}
-//         />
-//       </div>
-//       <div className="ui field">
-//         <label>Password</label>
-//         <input
-//           name="password"
-//           type="password"
-//           placeholder="password"
-//           value={fields.password}
-//           onChange={this.handleChange}
-//         />
-//       </div>
-//       <button type="submit" className="ui basic green button">
-//         Login
-//       </button>
-//     </form>
-//   </div>
-// </div>

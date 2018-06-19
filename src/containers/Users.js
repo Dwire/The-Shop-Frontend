@@ -13,13 +13,8 @@ class Users extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <h2>Local Users</h2>
-        </div>
-        <div className="ui grid container">
-          {this.listUsers()}
-        </div>
+      <div class="ui list user-list">
+        {this.listUsers()}
       </div>
     );
   }
