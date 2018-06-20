@@ -42,12 +42,31 @@
   min-height: 500px;
 }
 
+/* .home-banner {
+  background: url(./assets/images/apple-devices.jpg);
+  z-index: -1;
+} */
 .home-banner {
-  /* background-image: image(); */
-  /* background: url(./assets/images/apple-desk.jpg); */
-  z-index: 5;
+  background: url(/static/media/apple-devices.06fbf585.jpg);
+  z-index: -1;
+  width: 100%;
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* text-align: center; */
+  opacity: 0.8;
+  margin: auto;
+  padding-bottom: 5em;
 }
 
+.header-text {
+  font-size: 1em;
+  font-weight: normal;
+  margin-bottom: 0px;
+  color: rgb(68, 153, 148);
+  margin-top: 3em;
+}
 
 /* TESTINg With boarders */
 

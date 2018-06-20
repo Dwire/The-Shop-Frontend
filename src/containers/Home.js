@@ -16,7 +16,8 @@ import {
   Visibility,
 } from 'semantic-ui-react'
 import appleDesk from '../assets/images/apple-desk.jpg'
-import appleDevices from '../assets/images/apple-devices.jpg'
+import appleDevices from '../assets/images/apple-devices2.jpg'
+import arrows from '../assets/images/arrows.png'
 
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
@@ -24,6 +25,7 @@ import appleDevices from '../assets/images/apple-devices.jpg'
  */
 const HomepageHeading = ({ mobile }) => (
   <Container text>
+    <div className="header-text">
     <Header
       as='h1'
       content='The Shop'
@@ -32,6 +34,7 @@ const HomepageHeading = ({ mobile }) => (
         fontSize: mobile ? '2em' : '4em',
         fontWeight: 'normal',
         marginBottom: 0,
+        color: "#449994",
         marginTop: mobile ? '0.5em' : '1em',
       }}
     />
@@ -42,9 +45,11 @@ const HomepageHeading = ({ mobile }) => (
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
         fontWeight: 'normal',
+        color: "#449994",
         marginTop: mobile ? '0.5em' : '1.5em',
       }}
     />
+    </div>
   </Container>
 )
 
@@ -73,13 +78,14 @@ class DesktopContainer extends Component {
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
         >
+          <div className="home-banner">
           <Segment
-            className="home-banner"
-            inverted
+
+            // inverted
             textAlign='center'
             vertical
           >
-             <Image src={appleDevices} style={{ maxHeight: 500, width: '100%', padding: '1em 0em'}} />
+             {/* <Image src={appleDevices} style={{ maxHeight: 500, width: '100%', padding: '1em 0em'}} /> */}
 
             <Menu
               fixed={fixed ? 'top' : null}
@@ -107,6 +113,7 @@ class DesktopContainer extends Component {
             </Menu>
             <HomepageHeading />
           </Segment>
+          </div>
         </Visibility>
 
         {children}
@@ -220,10 +227,14 @@ const HomepageLayout = () => (
         </Grid.Row>
       </Grid>
     </Segment>
-    <Segment style={{ padding: '8em 0em' }} vertical>
-      <Container>
-        <Image bordered rounded size='large' src={appleDesk} />
-      </Container>
+    <Segment style={{ padding: '8em 0em', margin: 'auto'}}  vertical>
+      <Grid container stackable verticalAlign='middle'>
+        <Grid.Row>
+          <Grid.Column width={12}>
+        <Image bordered rounded size='large' src={arrows} />
+      </Grid.Column>
+      </Grid.Row>
+      </Grid>
     </Segment>
     <Segment style={{ padding: '0em' }} vertical>
       <Grid celled='internally' columns='equal' stackable>
