@@ -15,6 +15,8 @@ import {
   Sidebar,
   Visibility,
 } from 'semantic-ui-react'
+import appleDesk from '../assets/images/apple-desk.jpg'
+import appleDevices from '../assets/images/apple-devices.jpg'
 
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
@@ -24,18 +26,18 @@ const HomepageHeading = ({ mobile }) => (
   <Container text>
     <Header
       as='h1'
-      content='Imagine-a-Company'
+      content='The Shop'
       inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
         fontWeight: 'normal',
         marginBottom: 0,
-        marginTop: mobile ? '1.5em' : '3em',
+        marginTop: mobile ? '0.5em' : '1em',
       }}
     />
     <Header
       as='h2'
-      content='Do whatever you want when you want to.'
+      content='Make Anywhere a Co-Working Space'
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
@@ -43,10 +45,6 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? '0.5em' : '1.5em',
       }}
     />
-    <Button primary size='huge'>
-      Get Started
-      <Icon name='right arrow' />
-    </Button>
   </Container>
 )
 
@@ -76,11 +74,13 @@ class DesktopContainer extends Component {
           onBottomPassedReverse={this.hideFixedMenu}
         >
           <Segment
+            className="home-banner"
             inverted
             textAlign='center'
-            style={{ minHeight: 700, padding: '1em 0em' }}
             vertical
           >
+             <Image src={appleDevices} style={{ maxHeight: 500, width: '100%', padding: '1em 0em'}} />
+
             <Menu
               fixed={fixed ? 'top' : null}
               inverted={!fixed}
@@ -156,7 +156,7 @@ class MobileContainer extends Component {
             <Segment
               inverted
               textAlign='center'
-              style={{ minHeight: 350, padding: '1em 0em' }}
+              style={{ minHeight: 200, padding: '1em 0em' }}
               vertical
             >
               <Container>
@@ -202,7 +202,7 @@ ResponsiveContainer.propTypes = {
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
-    <Segment style={{ padding: '8em 0em' }} vertical>
+    <Segment style={{ padding: '5em 0em 0em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
           <Grid.Column width={8}>
@@ -215,10 +215,15 @@ const HomepageLayout = () => (
             </p>
           </Grid.Column>
           <Grid.Column floated='right' width={6}>
-            <Image bordered rounded size='large' src='/assets/images/wireframe/white-image.png' />
+            <Image bordered rounded size='large' src={appleDesk} />
           </Grid.Column>
         </Grid.Row>
       </Grid>
+    </Segment>
+    <Segment style={{ padding: '8em 0em' }} vertical>
+      <Container>
+        <Image bordered rounded size='large' src={appleDesk} />
+      </Container>
     </Segment>
     <Segment style={{ padding: '0em' }} vertical>
       <Grid celled='internally' columns='equal' stackable>
