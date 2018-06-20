@@ -17,15 +17,16 @@ import {
 } from 'semantic-ui-react'
 import appleDesk from '../assets/images/apple-desk.jpg'
 import appleDevices from '../assets/images/apple-devices2.jpg'
-import arrows from '../assets/images/arrows.png'
+import arrows from '../assets/images/arrows2.png'
 
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
  * such things.
  */
 const HomepageHeading = ({ mobile }) => (
+  <div className="header-text">
   <Container text>
-    <div className="header-text">
+    <div id="head-text">
     <Header
       as='h1'
       content='The Shop'
@@ -51,6 +52,7 @@ const HomepageHeading = ({ mobile }) => (
     />
     </div>
   </Container>
+</div>
 )
 
 HomepageHeading.propTypes = {
@@ -227,14 +229,10 @@ const HomepageLayout = () => (
         </Grid.Row>
       </Grid>
     </Segment>
-    <Segment style={{ padding: '8em 0em', margin: 'auto'}}  vertical>
-      <Grid container stackable verticalAlign='middle'>
-        <Grid.Row>
-          <Grid.Column width={12}>
-        <Image bordered rounded size='large' src={arrows} />
-      </Grid.Column>
-      </Grid.Row>
-      </Grid>
+    <Segment style={{ padding: '8em 0em' }} vertical>
+      <Container text>
+      <Image bordered rounded size='large' src={arrows} />
+      </Container>
     </Segment>
     <Segment style={{ padding: '0em' }} vertical>
       <Grid celled='internally' columns='equal' stackable>
