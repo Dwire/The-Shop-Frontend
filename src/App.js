@@ -11,6 +11,7 @@ import Dash from './containers/Dash'
 import EditProfileForm from './components/EditProfileForm'
 import UserMap from './containers/UserMap'
 import PostForm from './containers/PostForm'
+import Home from './containers/Home'
 // import Routes from './routes'
 import * as actions from './actions';
 
@@ -40,13 +41,9 @@ class App extends Component {
           </div>
       </div>
       )}
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">The Shop</h1>
-            <h5>A Community Built Around You</h5>
-          </header>
 
           <Switch>
+            <Route exact path="/" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/profile" component={Profile} />
@@ -58,7 +55,6 @@ class App extends Component {
             <Route path="/map" component={UserMap} />
           </Switch>
         </div>
-      </div>
     );
   }
 }
