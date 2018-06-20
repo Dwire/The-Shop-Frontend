@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import store from './store'
-import Home from './containers/Home'
 import App from './App';
 
 
@@ -15,7 +14,7 @@ const Root = ({ store }) => {
   return (
     <Router>
       <Provider store={store}>
-        <Route path="/" component={Home} />
+        <Route path="/" component={App} />
       </Provider>
     </Router>
   );

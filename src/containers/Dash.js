@@ -1,13 +1,18 @@
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom';
+
+import withAuth from '../hocs/withAuth';
+
 import React from 'react';
 import Profile from './Profile'
 import Users from './Users'
-import Posts from './Posts'
+// import Posts from './Posts'
 import UserMap from './UserMap'
 
 import DashProfileEdit from './Dash/DashProfileEdit'
 import DashCreatePost from './Dash/DashCreatePost'
 
-export default class Dash extends React.Component {
+class Dash extends React.Component {
 
   render() {
     return (
@@ -24,3 +29,12 @@ export default class Dash extends React.Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    currentUser: state.auth.currentUser
+  }
+}
+
+// export default withAuth(Profile);
+export default withRouter(withAuth(connect(mapStateToProps)(Dash)));

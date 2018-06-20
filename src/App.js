@@ -11,49 +11,52 @@ import Dash from './containers/Dash'
 import EditProfileForm from './components/EditProfileForm'
 import UserMap from './containers/UserMap'
 import PostForm from './containers/PostForm'
-import Home from './containers/Home'
+import HomepageLayout from './containers/Home'
+// import Home from './containers/Home'
 // import Routes from './routes'
 import * as actions from './actions';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        {this.props.loggedIn ? (
-        <div className="ui top fixed inverted menu">
-          <NavLink className="item" activeClassName="active" to="/profile">Profile</NavLink>
-          <NavLink className="item" activeClassName="active" to="/users">Local Users</NavLink>
-          <NavLink className="item" activeClassName="active" to="/posts">Message Board</NavLink>
-          <NavLink className="item" activeClassName="active" to="/map">User Map</NavLink>
-          <NavLink className="item" activeClassName="active" to="/dashboard">Dashboard</NavLink>
-          <div className="right menu">
-            <NavLink className="item" activeClassName="active" to="/login"  onClick={e => {
-               e.preventDefault();
-               this.props.logoutUser();
-            }}>Sign Out</NavLink>
+        <div>
+          {/* {this.props.loggedIn ? (
+          <div className="ui top fixed inverted menu">
+            <NavLink className="item" activeClassName="active" to="/profile">Profile</NavLink>
+            <NavLink className="item" activeClassName="active" to="/users">Local Users</NavLink>
+            <NavLink className="item" activeClassName="active" to="/posts">Message Board</NavLink>
+            <NavLink className="item" activeClassName="active" to="/map">User Map</NavLink>
+            <NavLink className="item" activeClassName="active" to="/dashboard">Dashboard</NavLink>
+            <div className="right menu">
+              <NavLink className="item" activeClassName="active" to="/login"  onClick={e => {
+                 e.preventDefault();
+                 this.props.logoutUser();
+              }}>Sign Out</NavLink>
+            </div>
           </div>
-        </div>
-          ) : (
-      <div className="ui inverted menu navbar">
-          <div className="right menu">
-            <NavLink className="item" activeClassName="active" to="/login">Login</NavLink>
-            <NavLink className="item" activeClassName="active" to="/register">Register</NavLink>
-          </div>
-      </div>
-      )}
 
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
-            <Route path="/profile" component={Profile} />
-            <Route path="/users" component={Users} />
-            <Route path="/dashboard" component={Dash} />
-            <Route path="/posts" component={Posts} />
-            <Route path="/edit_profile" component={EditProfileForm} />
-            <Route path="/post_form" component={PostForm} />
-            <Route path="/map" component={UserMap} />
-          </Switch>
+            ) : (
+          <div className="ui inverted menu navbar">
+              <div className="right menu">
+                <NavLink className="item" activeClassName="active" to="/login">Login</NavLink>
+                <NavLink className="item" activeClassName="active" to="/register">Register</NavLink>
+              </div>
+          </div>
+          )} */}
+
+
+              <Switch>
+                <Route exact path="/" component={HomepageLayout} />
+                <Route path="/login" component={Login} />
+                <Route path="/register" component={Register} />
+                <Route path="/profile" component={Profile} />
+                <Route path="/users" component={Users} />
+                <Route path="/dashboard" component={Dash} />
+                <Route path="/posts" component={Posts} />
+                <Route path="/edit_profile" component={EditProfileForm} />
+                <Route path="/post_form" component={PostForm} />
+                <Route path="/map" component={UserMap} />
+              </Switch>
         </div>
     );
   }

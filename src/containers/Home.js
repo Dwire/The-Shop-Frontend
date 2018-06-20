@@ -1,5 +1,8 @@
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import React, { Component } from 'react'
+import {NavLink, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+// import Login from './Login'
 import {
   Button,
   Container,
@@ -16,8 +19,8 @@ import {
   Visibility,
 } from 'semantic-ui-react'
 import appleDesk from '../assets/images/apple-desk.jpg'
-import appleDevices from '../assets/images/apple-devices2.jpg'
-import arrows from '../assets/images/arrows2.png'
+// import appleDevices from '../assets/images/apple-devices2.jpg'
+import arrows from '../assets/images/lank-arrows.png'
 
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
@@ -55,9 +58,7 @@ const HomepageHeading = ({ mobile }) => (
 </div>
 )
 
-HomepageHeading.propTypes = {
-  mobile: PropTypes.bool,
-}
+
 
 /* Heads up!
  * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
@@ -104,11 +105,15 @@ class DesktopContainer extends Component {
                 <Menu.Item as='a'>Company</Menu.Item>
                 <Menu.Item as='a'>Careers</Menu.Item> */}
                 <Menu.Item position='right'>
-                  <Button as='a' inverted={!fixed}>
-                    Log in
+                  <Button as='a' inverted={!fixed} >
+                    <NavLink activeClassName="active" to="/login">
+                    Log In
+                    </NavLink>
                   </Button>
                   <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
-                    Sign Up
+                    <NavLink activeClassName="active" to="/register">
+                      Sign Up
+                    </NavLink>
                   </Button>
                 </Menu.Item>
               </Container>
@@ -119,14 +124,14 @@ class DesktopContainer extends Component {
         </Visibility>
 
         {children}
+
       </Responsive>
+
     )
   }
 }
 
-DesktopContainer.propTypes = {
-  children: PropTypes.node,
-}
+
 
 class MobileContainer extends Component {
   state = {}
@@ -153,7 +158,9 @@ class MobileContainer extends Component {
             <Menu.Item as='a'>Work</Menu.Item>
             <Menu.Item as='a'>Company</Menu.Item>
             <Menu.Item as='a'>Careers</Menu.Item> */}
-            <Menu.Item as='a'>Log in</Menu.Item>
+          {/* <Menu.Item as='a'> */}
+            <NavLink className="item" activeClassName="active" to="/login">Log in</NavLink>
+          {/* </Menu.Item> */}
             <Menu.Item as='a'>Sign Up</Menu.Item>
           </Sidebar>
 
@@ -189,14 +196,12 @@ class MobileContainer extends Component {
             {children}
           </Sidebar.Pusher>
         </Sidebar.Pushable>
+
       </Responsive>
     )
   }
 }
 
-MobileContainer.propTypes = {
-  children: PropTypes.node,
-}
 
 const ResponsiveContainer = ({ children }) => (
   <div>
@@ -205,9 +210,7 @@ const ResponsiveContainer = ({ children }) => (
   </div>
 )
 
-ResponsiveContainer.propTypes = {
-  children: PropTypes.node,
-}
+
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
@@ -338,4 +341,9 @@ const HomepageLayout = () => (
     </Segment>
   </ResponsiveContainer>
 )
-export default HomepageLayout
+
+const mapStateToProps = state => ({
+  loggedIn: !!state.auth.currentUser.id
+});
+
+export default withRouter(connect(mapStateToProps, null)(HomepageLayout));

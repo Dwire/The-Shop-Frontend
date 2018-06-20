@@ -30,7 +30,7 @@ export const loginUser = (email, password, longitude, latitude, history) => disp
     localStorage.setItem('token', user.token);
     const {id, name, guru, project, email} = user
     adapter.auth.updateUser({id, name, guru, project, email, longitude, latitude});
-    history.push('/profile')
+    history.push('/dashboard')
   })
     // dispatch({ type: 'SET_CURRENT_USER', payload: user });
     // history.push('/profile');
@@ -52,8 +52,7 @@ export const logoutUser = () => {
 export const createPost = (topic, title, body, user_id, history) => dispatch => {
   dispatch({type: 'ASYNC_START'})
   adapter.auth.createPost({topic, title, body, user_id}).then(user => {
-    history.push('/posts')
-    // dispatch({ type: 'SET_CURRENT_USER_POST', payload: user })
+    dispatch({ type: 'SET_CURRENT_USERS', payload: user })
   })
 }
 

@@ -8,6 +8,56 @@
   margin: 20px;
 }
 
+/*  Log In and Registration Page*/
+.login-register {
+  background: url(./assets/images/bgimg3.jpg);
+  z-index: -1;
+  width: 100%;
+  height: -webkit-fill-available;
+  background-position: top;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+
+}
+
+.lr-forms .ui.segment:first-child {
+  margin: auto;
+  margin-top: 20%;
+  max-width: 300px;
+}
+
+.ui.message:last-child {
+
+  margin: auto;
+  margin-top: 10px;
+  max-width: 300px;
+}
+/*
+.ui.message:last-child {
+  margin-bottom: 0;
+  width: 30%;
+  margin: auto;
+} */
+
+
+/* .ui.segment:first-child {
+  margin-top: 0;
+  margin: auto;
+  margin-top: 20%;
+  width: 30%;
+}
+
+.ui.message:last-child {
+  margin-bottom: 0;
+  width: 30%;
+  margin: auto;
+} */
+
+/* End Long In & Registration */
+
+
+
+
 /* TESTINg With boarders */
 .user-map {
   border: 1px solid black;

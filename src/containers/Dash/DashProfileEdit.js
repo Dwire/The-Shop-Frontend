@@ -27,9 +27,9 @@ class DashProfileEdit extends React.Component {
            <Button icon='plus' onClick={this.handleShow} />
 
            <Dimmer active={active} onClickOutside={this.handleHide} verticalAlign='top'>
-             <Header as='h2' inverted>
+             {/* <Header as='h2' inverted>
                Title
-             </Header>
+             </Header> */}
               <EditProfileForm handleHide={this.handleHide}/>
            </Dimmer>
          </Dimmer.Dimmable>
