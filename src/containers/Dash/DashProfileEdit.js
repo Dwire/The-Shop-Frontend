@@ -1,15 +1,13 @@
 import React from 'react';
-import {connect} from 'react-redux'
+// import {connect} from 'react-redux'
 import { Button, Dimmer, Header, Image, Segment } from 'semantic-ui-react'
 import EditProfileForm from '../../components/EditProfileForm'
-import {withRouter} from 'react-router-dom'
-import * as actions from '../../actions';
+// import {withRouter} from 'react-router-dom'
+// import * as actions from '../../actions';
 
 class DashProfileEdit extends React.Component {
 
-  state = {
-    active: false,
-  }
+  state = {}
 
     handleShow = () => this.setState({ active: true })
     handleHide = () => this.setState({ active: false })
@@ -40,11 +38,5 @@ class DashProfileEdit extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    currentUser: state.auth.currentUser
-  }
-}
 
-
-export default withRouter(connect(mapStateToProps, actions)(DashProfileEdit));
+export default DashProfileEdit

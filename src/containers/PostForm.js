@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { connect } from 'react-redux'
+import {withRouter} from 'react-router-dom'
 
 import withAuth from '../hocs/withAuth';
 import * as actions from '../actions';
@@ -33,6 +33,7 @@ class PostForm extends React.Component {
     e.preventDefault()
     const {fields: {topic, title, body, user_id}} = this.state;
     this.props.createPost(topic, title, body, user_id, this.props.history);
+    this.props.handleHide()
   }
 
 
@@ -45,7 +46,7 @@ class PostForm extends React.Component {
           <h2 className="ui teal image header">
             <img src="assets/images/logo.png" className="image" alt="logo"/>
             <div className="content">
-                  Edit your account
+                Start Talking Shop
             </div>
           </h2>
           <form className="ui large form" onSubmit={this.handleSubmit}>
@@ -83,12 +84,13 @@ class PostForm extends React.Component {
                     onChange={this.handleChange} />
                 </div>
               </div>
-              <button className="ui fluid large teal submit button">Submit</button>
+                {/* <button className="ui fluid large teal submit button">Submit</button> */}
             </div>
 
             <div className="ui error message"></div>
 
           </form>
+          <button onClick={this.handleSubmit} className="ui fluid large teal submit button">Submit</button>
         </div>
       </div>
 
@@ -104,7 +106,7 @@ function mapStateToProps(state) {
   }
 }
 
-export default withAuth(connect(mapStateToProps, actions)(PostForm));
+export default withRouter(withAuth(connect(mapStateToProps, actions)(PostForm)));
 
 
 /* <label>

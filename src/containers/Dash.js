@@ -3,7 +3,9 @@ import Profile from './Profile'
 import Users from './Users'
 import Posts from './Posts'
 import UserMap from './UserMap'
+
 import DashProfileEdit from './Dash/DashProfileEdit'
+import DashCreatePost from './Dash/DashCreatePost'
 
 export default class Dash extends React.Component {
 
@@ -15,7 +17,7 @@ export default class Dash extends React.Component {
           <div className="column profile-edit"><DashProfileEdit /></div>
         </div>
         <div className="column users"><Users /></div>
-        <div className="column posts"><Posts /></div>
+        <div className="column posts"><DashCreatePost/></div>
         <div className="column user-map"><UserMap /></div>
       </div>
 

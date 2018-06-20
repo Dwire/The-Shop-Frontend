@@ -40,7 +40,7 @@ export const updateUser = (id, name, guru, project, email, history) => dispatch 
   console.log("HISTORY:", history);
   dispatch({type: 'ASYNC_START'});
   adapter.auth.updateUser({id, name, guru, project, email}).then(user => {
-    history.push('/profile')
+      dispatch({ type: 'SET_CURRENT_USER', payload: user })
   })
 }
 
@@ -52,7 +52,8 @@ export const logoutUser = () => {
 export const createPost = (topic, title, body, user_id, history) => dispatch => {
   dispatch({type: 'ASYNC_START'})
   adapter.auth.createPost({topic, title, body, user_id}).then(user => {
-    history.push('/profile')
+    history.push('/posts')
+    // dispatch({ type: 'SET_CURRENT_USER_POST', payload: user })
   })
 }
 

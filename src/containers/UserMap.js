@@ -12,7 +12,6 @@ export class MapContainer extends React.Component {
   };
 
   localUserMarker = () => {
-    console.log(this.props.localUsers);
       return this.props.localUsers.map(user => {
         return <Marker
               onClick={this.onMarkerClick}
@@ -76,7 +75,6 @@ export class MapContainer extends React.Component {
       width: '94%',
       height: '60%'
     }
-
 
 
     console.log("map", this.props.google)
