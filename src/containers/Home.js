@@ -18,9 +18,13 @@ import {
   Sidebar,
   Visibility,
 } from 'semantic-ui-react'
-import appleDesk from '../assets/images/apple-desk.jpg'
+
+// import appleDesk from '../assets/images/apple-desk.jpg'
 // import appleDevices from '../assets/images/apple-devices2.jpg'
-import arrows from '../assets/images/lank-arrows.png'
+import workingTogether from '../assets/images/working-together.jpeg'
+// import arrows from '../assets/images/lank-arrows.png'
+import ScreenShot from '../assets/images/screen-shot.png'
+import ScreenShotHeat from '../assets/images/screen-shot-heat2.png'
 
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
@@ -105,12 +109,12 @@ class DesktopContainer extends Component {
                 <Menu.Item as='a'>Company</Menu.Item>
                 <Menu.Item as='a'>Careers</Menu.Item> */}
                 <Menu.Item position='right'>
-                  <Button as='a' inverted={!fixed} >
+                  <Button inverted={!fixed} >
                     <NavLink activeClassName="active" to="/login">
                     Log In
                     </NavLink>
                   </Button>
-                  <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
+                  <Button inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
                     <NavLink activeClassName="active" to="/register">
                       Sign Up
                     </NavLink>
@@ -219,22 +223,23 @@ const HomepageLayout = () => (
         <Grid.Row>
           <Grid.Column width={8}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              We Help Companies and Companions
+              WeWork Mobile - A co-working space wherever you set up shop
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              We can give your company superpowers to do things that they never thought possible.
-              Let us delight your customers and empower your needs... through pure data analytics.
+              work better together blabla bla bla blabla
+              happier together blabla bla bla blabla
+              life is better together bla bla bla
             </p>
           </Grid.Column>
           <Grid.Column floated='right' width={6}>
-            <Image bordered rounded size='large' src={appleDesk} />
+            <Image bordered rounded size='large' src={workingTogether} />
           </Grid.Column>
         </Grid.Row>
       </Grid>
     </Segment>
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Container text>
-      <Image bordered rounded size='large' src={arrows} />
+      {/* <Image bordered rounded size='large' src={arrows} /> */}
       </Container>
     </Segment>
     <Segment style={{ padding: '0em' }} vertical>
@@ -244,21 +249,20 @@ const HomepageLayout = () => (
             <Header as='h3' style={{ fontSize: '2em' }}>
               "Profile"
             </Header>
-            <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
+            <p style={{ fontSize: '1.33em' }}>Set up quick profile bla bla..........</p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
             <Header as='h3' style={{ fontSize: '2em' }}>
               "Message Boards"
             </Header>
-            <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
+            <p style={{ fontSize: '1.33em' }}>Connect with the people working around you and talk shop</p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
             <Header as='h3' style={{ fontSize: '2em' }}>
               "Community"
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-              <Image avatar src='/assets/images/avatar/large/nan.jpg' />
-              <b>Nan</b> Chief Fun Officer Acme Toys
+              see the remote workers around you check their skellset and projects they are working on
             </p>
           </Grid.Column>
         </Grid.Row>
@@ -272,35 +276,32 @@ const HomepageLayout = () => (
           horizontal
           style={{ margin: '3em 0em', textTransform: 'uppercase' }}
         >
-          <a href='#'>Maps</a>
+          Maps
         </Divider>
         <Header as='h3' style={{ fontSize: '2em' }}>
-          Did We Tell You About Our Bananas?
+          Maps Maps Maps Maps
         </Header>
         <p style={{ fontSize: '1.33em' }}>
-          Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-          it's really true. It took years of gene splicing and combinatory DNA research, but our
-          bananas can really dance.
+          Log-in and see how many people are working remote in your area.catch
+          Zoom out to see a heat map of the whole city and find the hotspots for working
+          remote in your area.
         </p>
       </Container>
     </Segment>
-    <Segment style={{ padding: '0em' }} vertical>
+    <Segment style={{ padding: '0em', marginBottom: '2em' }} vertical>
       <Grid celled='internally' columns='equal' stackable>
         <Grid.Row textAlign='center'>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
             <Header as='h3' style={{ fontSize: '2em' }}>
               "Local Map"
             </Header>
-            <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
+            <Image src={ScreenShot} style={{width: "100%"}} rounded />
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
             <Header as='h3' style={{ fontSize: '2em' }}>
               "Heat Map"
             </Header>
-            <p style={{ fontSize: '1.33em' }}>
-              <Image avatar src='/assets/images/avatar/large/nan.jpg' />
-              <b>Nan</b> Chief Fun Officer Acme Toys
-            </p>
+            <Image src={ScreenShotHeat} style={{width: '100%'}} rounded />
           </Grid.Column>
         </Grid.Row>
       </Grid>

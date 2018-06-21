@@ -1,9 +1,11 @@
 import React from 'react';
+import { Segment } from 'semantic-ui-react'
 // import Users from '../containers/Users'
 // import UserDetail from './UserDetail'
 
 const UserDetail = (props) => {
     return (
+      <Segment>
         <div>
           <div className="item">
             <div className="content">
@@ -16,7 +18,8 @@ const UserDetail = (props) => {
             </div>
           </div>
         </div>
-      );
+      </Segment>
+    );
   }
 
 export default UserDetail

@@ -44,7 +44,7 @@ class PostForm extends React.Component {
         {this.state.error ? <h1>Try Again</h1> : null}
         <div className="column">
           <h2 className="ui teal image header">
-            <img src="assets/images/logo.png" className="image" alt="logo"/>
+            {/* <img src="assets/images/logo.png" className="image" alt="logo"/> */}
             <div className="content">
                 Start Talking Shop
             </div>

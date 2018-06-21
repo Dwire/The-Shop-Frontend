@@ -20,7 +20,7 @@ export const registerUser = (name, email, password, longitude, latitude, history
   adapter.auth.register({name, email, password, longitude, latitude}).then(user => {
     localStorage.setItem('token', user.token);
     // dispatch({type: 'SET_CURRENT_USER', payload: user });
-    history.push('/profile')
+    history.push('/dashboard')
   })
 }
 

@@ -38,11 +38,9 @@ class UserPosts extends React.Component {
     }
   }
 
-
-
   render() {
     return (
-      <div className="ui cards user-list">
+      <div className="ui cards">
         {this.displayPosts()}
       </div>
       );

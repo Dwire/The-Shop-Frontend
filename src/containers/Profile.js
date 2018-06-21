@@ -14,6 +14,7 @@ class Profile extends React.Component {
 
   render() {
     return (
+      
       <div>
         <h1>Profile for {this.props.currentUser.name}</h1>
         <h4>Name: {this.props.currentUser.name}</h4>

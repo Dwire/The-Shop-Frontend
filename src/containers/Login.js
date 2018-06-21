@@ -62,7 +62,7 @@ class Login extends React.Component {
                   <h2 className="ui teal image header">
                     {/* <img src="assets/images/logo.png" className="image" alt="logo"/> */}
                     <div className="content">
-                          Welcome
+                          Welcome Back!
                     </div>
                   </h2>
                   <div className="field">

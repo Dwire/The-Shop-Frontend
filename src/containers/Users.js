@@ -1,8 +1,9 @@
 // FIXME: Is there a better "redux" way to pass props down to user rather then this "React" way
 
 import React from 'react';
-import withAuth from '../hocs/withAuth'
 import { connect } from 'react-redux'
+
+import withAuth from '../hocs/withAuth'
 import User from '../components/User'
 
 class Users extends React.Component {
