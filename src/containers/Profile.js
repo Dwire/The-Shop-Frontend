@@ -7,7 +7,7 @@ import React from 'react';
 import {NavLink, withRouter, Route} from 'react-router-dom';
 import { connect } from 'react-redux'
 
-import { Header, Icon, Image } from 'semantic-ui-react'
+import { Header, Icon, Image, List } from 'semantic-ui-react'
 
 import withAuth from '../hocs/withAuth';
 import EditProfileForm from '../components/EditProfileForm'
@@ -21,14 +21,28 @@ class Profile extends React.Component {
 
   render() {
     return (
-      <div style={{textAlign: "center", paddingTop: '1em'}}>
+      <div style={{ paddingTop: '1em'}}>
         <Header as='h2' icon textAlign='center'>
           {/* <Icon name='users' circular /> */}
           <Header.Content>{this.props.currentUser.name}</Header.Content>
         </Header>
-        <h4>Email: {this.props.currentUser.email}</h4>
-        <h4>Guru: {this.props.currentUser.guru}</h4>
-        <h4>Project: {this.props.currentUser.project}</h4>
+        <div style={{paddingLeft: '1em', marginBottom: '4em'}}>
+          <div style={{borderBottom: '1px solid rgba(10, 10, 10, 0.3)'}}>
+            <h4>Email: {this.props.currentUser.email}</h4>
+            <h4>Guru: {this.props.currentUser.guru}</h4>
+            <h4>Project: {this.props.currentUser.project}</h4>
+          </div>
+        <List>
+          <List.Item
+            icon='mail'
+            content={<a href='mailto:jack@semantic-ui.com'>jack@semantic-ui.com</a>}
+          />
+          <List.Item icon='github' content='Semantic UI' />
+          <List.Item icon='linkedin' content='New York, NY' />
+
+          <List.Item icon='globe' content={<a href='http://www.semantic-ui.com'>semantic-ui.com</a>} />
+        </List>
+        </div>
 
       </div>
 

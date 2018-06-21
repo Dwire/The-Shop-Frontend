@@ -6,6 +6,7 @@ import { Segment } from 'semantic-ui-react'
 const UserDetail = (props) => {
     return (
       <Segment>
+        <h4>Contact Info</h4>
         <div>
           <div className="item">
             <div className="content">
@@ -14,7 +15,17 @@ const UserDetail = (props) => {
           </div>
           <div className="item">
             <div className="content">
-              <i className="blue linkedin icon"></i><a href="http://www.semantic-ui.com">semantic-ui.com</a>
+              <i className="linkedin icon"></i><a href="http://www.semantic-ui.com">semantic-ui.com</a>
+            </div>
+          </div>
+          <div className="item">
+            <div className="content">
+              <i className="github icon"></i><a href="http://www.semantic-ui.com">semantic-ui.com</a>
+            </div>
+          </div>
+          <div className="item">
+            <div className="content">
+              <i className="globe icon"></i><a href="http://www.semantic-ui.com">semantic-ui.com</a>
             </div>
           </div>
         </div>
