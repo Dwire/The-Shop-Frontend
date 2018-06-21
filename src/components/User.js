@@ -22,7 +22,7 @@ class User extends React.Component {
 
   render() {
     return (
-      <Segment.Group raised>
+      <Segment.Group raised className="user-segments">
         <Segment>
           <div className="content">
             <i className="big user circle icon"></i><a className="header">{this.props.user.name}</a>

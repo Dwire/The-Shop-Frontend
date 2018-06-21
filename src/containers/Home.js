@@ -43,6 +43,7 @@ const HomepageHeading = ({ mobile }) => (
         fontWeight: 'normal',
         marginBottom: 0,
         color: "#449994",
+        opacity: "1",
         marginTop: mobile ? '0.5em' : '1em',
       }}
     />

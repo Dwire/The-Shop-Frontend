@@ -5,6 +5,8 @@ import EditProfileForm from '../../components/EditProfileForm'
 // import {withRouter} from 'react-router-dom'
 // import * as actions from '../../actions';
 
+import Dark from '../../assets/images/apple-devices-dark2.jpg'
+
 class DashProfileEdit extends React.Component {
 
   state = {}
@@ -19,17 +21,11 @@ class DashProfileEdit extends React.Component {
     return (
       <div >
          <Dimmer.Dimmable className="dimable-div" as={Segment} dimmed={active}>
-           <p>
-             <Image src='/assets/images/wireframe/short-paragraph.png' />
-           </p>
-           <h1>Edit Your Profile</h1>
-           <h3>Let people know what you are up to</h3>
+            <Image src={Dark} />
+
            <Button icon='plus' onClick={this.handleShow} />
 
            <Dimmer active={active} onClickOutside={this.handleHide} verticalAlign='top'>
-             {/* <Header as='h2' inverted>
-               Title
-             </Header> */}
               <EditProfileForm handleHide={this.handleHide}/>
            </Dimmer>
          </Dimmer.Dimmable>

@@ -3,10 +3,22 @@
   /* background: url(./assets/images/apple-desk.jpg); */
 }
 
-.user-list {
-  text-align: left;
-  margin: 20px;
+.dash-body {
+  /* background: rgba(68, 153, 148, 0.5); */
+  background: linear-gradient(to right bottom, rgba(10,10,10,0.6), rgba(68, 153, 148, 0.6));
+
 }
+
+.dash-inner-body {
+  background: rgba(106, 108, 109, 0.5);
+  margin: 0 2em;
+  padding: 0 4em;
+}
+
+.nav-bar {
+  margin-bottom: 4em;
+}
+
 
 /*  Log In and Registration Page*/
 .login-register {
@@ -16,7 +28,7 @@
   height: -webkit-fill-available;
   background-position: top;
   background-repeat: no-repeat;
-  opacity: 0.8;
+  opacity: 0.7;
 
 }
 
@@ -27,41 +39,103 @@
 }
 
 .ui.message:last-child {
-
   margin: auto;
   margin-top: 10px;
   max-width: 300px;
 }
-
-
 /* End Long In & Registration */
 
 
 
 
+
+/*  Start Profile Card */
+.profile {
+  background-color: lightgray;
+}
+.profile-section {
+  /* border: 4px solid black; */
+  margin-bottom: 20px;
+}
+
+.profile-card {
+  width: 70%;
+  margin-left: 2em;
+}
+/* End Profile Card */
+
+
+
+
+/*  Start Dash User*/
+.users-posts {
+  padding-top: 6em;
+}
+
+.users {
+  /* border: 1px solid black; */
+  float: left;
+  width: 40%;
+  overflow: scroll;
+  max-height: 600px;
+}
+
+.users-outer {
+  max-width: 100;
+  margin-left: 4em;
+  /* margin-top: 4em; */
+}
+
+/* .user-segments {
+  text-align: left;
+} */
+/* end Dash user */
+
+/*  Staert dash posts*/
+
+.posts {
+  /* border: 1px solid black; */
+  /* margin-left: 8em;
+  margin-right: 2em; */
+  /* margin: auto; */
+  max-width: 100%;
+  overflow: scroll;
+  max-height: 600px;
+}
+
+.posts-outer {
+  float: right;
+  max-width: 50%;
+  margin-left: 4em;
+  margin-right: 2em;
+  /* margin-top: 4em; */
+}
+
+
+
+/* End dash posts */
+
+
 /* TESTINg With boarders */
 .user-map {
-  border: 1px solid black;
-  margin: auto;
+  /* border: 1px solid black; */
+  margin: 15em auto 0px;
+  overflow-y: hidden;
   min-width: 95%;
   min-height: 800px;
 }
 
-.posts {
-  border: 1px solid black;
-  overflow: scroll;
-  max-height: 600px;
-}
+/* .ui.grid>.column:not(.row) .user-map {
+  padding-top: 15rem;
+} */
+/* .map-container {
+  margin: auto;
+} */
 
-.users {
-  border: 1px solid black;
-  overflow: scroll;
-  max-height: 600px;
-}
 
-.profile {
-  border: 1px solid black;
-}
+
+
+
 
 .profile-sec {
   overflow: scroll;
@@ -73,10 +147,16 @@
   min-height: 500px;
 }
 
-/* .home-banner {
-  background: url(./assets/images/apple-devices.jpg);
-  z-index: -1;
-} */
+
+/* START MAP */
+
+
+
+
+/* END MAP */
+
+
+/* Start homepage header  */
 .home-banner {
   background: url(./assets/images/apple-devices2.jpg);
   z-index: -1;
@@ -92,17 +172,12 @@
 }
 
 .header-text {
-  background-color: rgba(255,255,255,0.7);
+  background-color: rgba(255, 255, 255, 0.6);
   padding-bottom: 15px;
 }
 
 
-/* .arrows {
-  border: 0px;
-} */
-
-
-/* TESTINg With boarders */
+/* end homepage header  */
 
 
 
