@@ -139,6 +139,9 @@
   max-height: 600px;
 }
 
+.post-form {
+  height: 600px;
+}
 .posts-outer {
   /* padding: 2em; */
   /* background: gray; */

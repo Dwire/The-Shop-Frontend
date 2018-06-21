@@ -25,7 +25,7 @@ class UserPosts extends React.Component {
     if (this.props.userPosts.length > 0) {
       return this.props.userPosts.map(post => {
         return (
-         // <div>
+         <div>
           <Segment.Group raised className="user-segments">
             <Segment>
               <div className="content">
@@ -46,7 +46,7 @@ class UserPosts extends React.Component {
               <button onClick={this.handleClick}>{this.state.toggle ? <i className="minus icon"></i> : <i className="plus icon"></i>}</button> */}
             </Segment>
           </Segment.Group>
-        // </div>
+        </div>
       )})
     }
   }
