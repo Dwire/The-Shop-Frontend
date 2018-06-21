@@ -14,8 +14,7 @@ class Users extends React.Component {
 
   render() {
     return (
-      <div className="ui list user-list">
-        {/* <h1>Local Users</h1> */}
+      <div>
         {this.listUsers()}
       </div>
     );

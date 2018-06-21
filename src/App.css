@@ -9,6 +9,8 @@
 
 }
 
+
+
 .dash-inner-body {
   background: rgba(106, 108, 109, 0.5);
   margin: 0 2em;
@@ -31,6 +33,8 @@
   opacity: 0.7;
 
 }
+
+
 
 .lr-forms .ui.segment:first-child {
   margin: auto;
@@ -67,24 +71,37 @@
 
 
 
+.user-segments {
+  padding: 1em;
+}
 /*  Start Dash User*/
+.heading {
+  background:  rgba(10,10,10,0.6);
+  width: 100%;
+  text-align: center;
+}
+
+
 .users-posts {
-  padding-top: 6em;
+  padding: 6em;
+  width: 100%;
+  /* background: darkgray; */
 }
 
 .users {
-  /* border: 1px solid black; */
+  background:  rgba(10, 10, 10, 0.4);
   float: left;
-  width: 40%;
+  width: 100%;
   overflow: scroll;
   max-height: 600px;
 }
 
 .users-outer {
-  max-width: 100;
-  margin-left: 4em;
-  /* margin-top: 4em; */
+  max-width: 45%;
+  background: gray;
+  padding-left: 1em;
 }
+
 
 /* .user-segments {
   text-align: left;
@@ -98,16 +115,22 @@
   /* margin-left: 8em;
   margin-right: 2em; */
   /* margin: auto; */
+  /* background: teal; */
+  /* padding: 2em; */
+  background:  rgba(10,10,10,0.4);
   max-width: 100%;
   overflow: scroll;
   max-height: 600px;
 }
 
 .posts-outer {
+  /* padding: 2em; */
+  /* background: gray; */
+  background:  rgba(10,10,10,0.4);
   float: right;
-  max-width: 50%;
-  margin-left: 4em;
-  margin-right: 2em;
+  max-width: 45%;
+  /* margin-left: 4em; */
+  margin-right: 1em;
   /* margin-top: 4em; */
 }
 

@@ -1,51 +1,45 @@
 import React, { Component } from 'react'
-import { Menu, Segment, Button } from 'semantic-ui-react'
+import { Menu, Segment, Button, Container, Menue,  } from 'semantic-ui-react'
+import {NavLink, withRouter } from 'react-router-dom';
 
 
 
 
-export default class NavBar extends Component {
-  state = { activeItem: 'home' }
+class NavBar extends Component {
+  state = {}
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  // handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
+    const { fixed } = this.state
     const { activeItem } = this.state
 
     return (
       <div className="nav-bar">
-      <Menu size='small'>
-        <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
-        <Menu.Item
-          name='messages'
-          active={activeItem === 'messages'}
-          onClick={this.handleItemClick}
-        />
-
-        <Menu.Menu position='right'>
-
-          <Menu.Item>
-            <Button primary>Sign Out</Button>
-          </Menu.Item>
-        </Menu.Menu>
-      </Menu>
+        <Menu
+          fixed={fixed ? 'top' : null}
+          inverted={!fixed}
+          pointing={!fixed}
+          secondary={!fixed}
+          size='large'
+        >
+            {/* <Menu.Item as='a' active>
+              Home
+            </Menu.Item>
+            <Menu.Item as='a'>Work</Menu.Item>
+            <Menu.Item as='a'>Company</Menu.Item>
+            <Menu.Item as='a'>Careers</Menu.Item> */}
+            <Menu.Item position='right'>
+              <Button style={{backgroundColor: "teal", opacity: "0.6", marginLeft: '0.5em' }} inverted={!fixed} primary={fixed} >
+                <NavLink style={{color: "white"}} activeClassName="active" to="/">
+                  Log Out
+                </NavLink>
+              </Button>
+            </Menu.Item>
+        </Menu>
       </div>
     )
   }
 }
 
-
-{/* <div className='nav-bar'>
-  <Menu pointing secondary>
-    <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
-
-    <Menu.Menu position='right'>
-      <Menu.Item
-        name='logout'
-        active={activeItem === 'logout'}
-        onClick={this.handleItemClick}
-      />
-    </Menu.Menu>
-  </Menu>
-</div>
-) */}
+export default withRouter(NavBar)

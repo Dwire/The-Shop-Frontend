@@ -32,19 +32,23 @@ class Dash extends React.Component {
               </div>
 
               <div className='users-posts'>
-                  <div className='users-outer'>
-                    <h1>LOCAL USERS</h1>
-                    <div className="users">
-                      <div className="column"><Users /></div>
-                    </div>
-                  </div>
-                  <div className='posts-outer'>
-                    <h1>LOCAL POSTS</h1>
-                    <div className='posts'>
-                      <div className="column"><DashCreatePost/></div>
-                    </div>
+                <div className='users-outer'>
+                {/* <div className='heading'> */}
+                  <h1 style={{color: "teal", textAlign: "center", background: 'rgba(10,10,10,0.4)'}}>LOCAL USERS</h1>
+                {/* </div> */}
+                  <div className="users">
+                    <div className="column"><Users /></div>
                   </div>
                 </div>
+                <div className='posts-outer'>
+
+                  <h1 style={{color: "teal", textAlign: "center", background: 'rgba(10,10,10,0.4)'}}>LOCAL POSTS</h1>
+
+                  <div className='posts'>
+                    <div className="column"><DashCreatePost/></div>
+                  </div>
+                </div>
+              </div>
 
               {/* <div className="map-container"> */}
                 <div className="column user-map"><UserMap /></div>

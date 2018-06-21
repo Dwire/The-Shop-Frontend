@@ -110,13 +110,13 @@ class DesktopContainer extends Component {
                 <Menu.Item as='a'>Company</Menu.Item>
                 <Menu.Item as='a'>Careers</Menu.Item> */}
                 <Menu.Item position='right'>
-                  <Button inverted={!fixed} >
-                    <NavLink activeClassName="active" to="/login">
+                  <Button style={{backgroundColor: "teal", opacity: "0.6"}} inverted={!fixed} >
+                    <NavLink style={{color: "white"}} activeClassName="active" to="/login">
                     Log In
                     </NavLink>
                   </Button>
-                  <Button inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
-                    <NavLink activeClassName="active" to="/register">
+                  <Button style={{backgroundColor: "teal", opacity: "0.6", marginLeft: '0.5em' }} inverted={!fixed} primary={fixed} >
+                    <NavLink style={{color: "white"}} activeClassName="active" to="/register">
                       Sign Up
                     </NavLink>
                   </Button>
@@ -247,19 +247,19 @@ const HomepageLayout = () => (
       <Grid celled='internally' columns='equal' stackable>
         <Grid.Row textAlign='center'>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
+            <Header as='h3' style={{ fontSize: '2em', color: "teal" }}>
               "Profile"
             </Header>
             <p style={{ fontSize: '1.33em' }}>Set up quick profile bla bla..........</p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
+            <Header as='h3' style={{ fontSize: '2em', color: "teal" }}>
               "Message Boards"
             </Header>
             <p style={{ fontSize: '1.33em' }}>Connect with the people working around you and talk shop</p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
+            <Header as='h3' style={{ fontSize: '2em', color: "teal" }}>
               "Community"
             </Header>
             <p style={{ fontSize: '1.33em' }}>

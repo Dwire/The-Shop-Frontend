@@ -17,7 +17,7 @@ export class MapContainer extends React.Component {
               onClick={this.onMarkerClick}
               key={user.id}
               title={'Your Next Best Friend'}
-              label={user.name}
+              // label={user.name}
               name={user.name}
               position={{lat: user.latitude, lng: user.longitude}}
             />

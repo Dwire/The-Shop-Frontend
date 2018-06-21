@@ -15,8 +15,8 @@ class Posts extends React.Component {
 
   render() {
     return (
-      <div className="ui list user-list">
-        <h1>Local User Posts</h1>
+      <div>
+        {/* <h1>Local User Posts</h1> */}
         {/* <button><NavLink activeClassName="active" to="/post_form">Creat Post</NavLink></button>
         <Route exact path="/post_form" component={PostForm} /> */}
           {this.userPosts()}

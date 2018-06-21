@@ -18,7 +18,7 @@ class DashCreatePost extends React.Component {
     const { active } = this.state
     return (
       <div >
-         <Dimmer.Dimmable className="dimable-div" as={Segment} dimmed={active}>
+         <Dimmer.Dimmable className="dimable-div" dimmed={active}>
            <Button icon='plus' onClick={this.handleShow} />
            <Posts />
            <Dimmer active={active} onClickOutside={this.handleHide} verticalAlign='top'>
