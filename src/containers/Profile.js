@@ -7,7 +7,7 @@ import React from 'react';
 import {NavLink, withRouter, Route} from 'react-router-dom';
 import { connect } from 'react-redux'
 
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Header, Icon, Image } from 'semantic-ui-react'
 
 import withAuth from '../hocs/withAuth';
 import EditProfileForm from '../components/EditProfileForm'
@@ -20,30 +20,16 @@ class Profile extends React.Component {
 
 
   render() {
-    const extra = (
-      <a>
-        <Icon name='user' />
-        16 Posts
-      </a>
-    )
     return (
-      <div className="profile-card">
-        <Card fluid={true}>
-          <Image src={ProPic}/>
-          <Card.Content>
-            <Card.Header>Matthew</Card.Header>
-            <Card.Meta>
-              <span className='date'>Joined in 2015</span>
-            </Card.Meta>
-            <Card.Description>Matthew is a musician living in Nashville.</Card.Description>
-          </Card.Content>
-          <Card.Content extra>
-            <a>
-              <Icon name='user' />
-              22 Friends
-            </a>
-          </Card.Content>
-        </Card>
+      <div style={{textAlign: "center", paddingTop: '1em'}}>
+        <Header as='h2' icon textAlign='center'>
+          {/* <Icon name='users' circular /> */}
+          <Header.Content>{this.props.currentUser.name}</Header.Content>
+        </Header>
+        <h4>Email: {this.props.currentUser.email}</h4>
+        <h4>Guru: {this.props.currentUser.guru}</h4>
+        <h4>Project: {this.props.currentUser.project}</h4>
+
       </div>
 
 
@@ -68,7 +54,7 @@ function mapStateToProps(state) {
     currentUser: state.auth.currentUser
   }
 }
-// NOTE: Potential Profile 
+// NOTE: Potential Profile
 // import { Header, Icon, Image } from 'semantic-ui-react'
 // <div>
 //   <Header as='h2' icon textAlign='center'>

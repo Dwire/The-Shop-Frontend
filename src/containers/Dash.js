@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom';
+import { Image } from 'semantic-ui-react'
 
 
 import withAuth from '../hocs/withAuth';
@@ -11,6 +12,7 @@ import Users from './Users'
 import UserMap from './UserMap'
 import Footer from './layout/Footer'
 import NavBar from './layout/NavBar'
+import ProfilePic from '../assets/images/profile-pic.JPG'
 
 
 import DashProfileEdit from './Dash/DashProfileEdit'
@@ -27,14 +29,14 @@ class Dash extends React.Component {
             <div className="ui two column grid">
 
               <div className="two column row profile-section">
-                <div className="column profile"><Profile /></div>
+                <div className="column profile"><Image src={ProfilePic} fluid={true}/></div>
                 <div className="column"><DashProfileEdit /></div>
               </div>
 
               <div className='users-posts'>
                 <div className='users-outer'>
                 {/* <div className='heading'> */}
-                  <h1 style={{color: "teal", textAlign: "center", background: 'rgba(10,10,10,0.4)'}}>LOCAL USERS</h1>
+                  <h1 style={{color: "teal", textAlign: "center", background: 'rgba(10,10,10,0.6)'}}>LOCAL USERS</h1>
                 {/* </div> */}
                   <div className="users">
                     <div className="column"><Users /></div>
